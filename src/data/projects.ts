@@ -11,17 +11,17 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Project Alpha',
-    description: 'A full-stack web application with real-time collaboration features and AI-powered suggestions.',
-    tags: ['Next.js', 'TypeScript', 'Prisma', 'OpenAI'],
-    image: '/projects/alpha.jpg',
-    demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/parrvluthra/project-alpha',
-    year: '2024',
-    category: 'Full Stack',
-  },
+  // {
+  //   id: 1,
+  //   title: 'Project Alpha',
+  //   description: 'A full-stack web application with real-time collaboration features and AI-powered suggestions.',
+  //   tags: ['Next.js', 'TypeScript', 'Prisma', 'OpenAI'],
+  //   image: '/projects/alpha.jpg',
+  //   demoUrl: 'https://demo.example.com',
+  //   githubUrl: 'https://github.com/parrvluthra/project-alpha',
+  //   year: '2024',
+  //   category: 'Full Stack',
+  // },
   {
     id: 2,
     title: 'Project Beta',
