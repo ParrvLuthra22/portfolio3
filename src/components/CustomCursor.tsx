@@ -12,11 +12,11 @@ export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   const moveCursor = (e: MouseEvent) => {
-  //     dotX.set(e.clientX);
-  //     dotY.set(e.clientY);
-  //   };
+  useEffect(() => {
+    const moveCursor = (e: MouseEvent) => {
+      dotX.set(e.clientX);
+      dotY.set(e.clientY);
+    };
 
     const handleHoverIn = () => {
       isHovering.current = true;
