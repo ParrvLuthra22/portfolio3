@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Parrv — software engineer, obsessed with the intersection of engineering and experience. A portfolio directed as a short film: eight scenes, one reel, 24 seconds.">
+<meta name="description" content="Parrv — creative developer & designer, crafting extraordinary digital experiences. A portfolio directed as a short film: nine scenes, one reel, 24 seconds.">
 <meta name="theme-color" content="#0E0F0D">
 <title>PARRV — A Portfolio in 24 Seconds</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23060606'/%3E%3Crect y='18' width='64' height='28' fill='%23171A17'/%3E%3Crect y='18' width='64' height='1.5' fill='%238E958D' opacity='.5'/%3E%3Crect y='44.5' width='64' height='1.5' fill='%238E958D' opacity='.5'/%3E%3Ccircle cx='55' cy='9' r='3.5' fill='%237D2A1E'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="PARRV — A Portfolio in 24 Seconds">
-<meta property="og:description" content="Software engineer, obsessed with the intersection of engineering and experience. A portfolio directed as a short film.">
+<meta property="og:description" content="Creative developer & designer, crafting extraordinary digital experiences. A portfolio directed as a short film.">
 <meta property="og:url" content="https://parrvluthra22.github.io/portfolio3/">
 <meta property="og:image" content="https://parrvluthra22.github.io/portfolio3/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -188,11 +188,13 @@ section{min-height:100vh;scroll-snap-align:start;position:relative;}
   background:linear-gradient(90deg,transparent 0%,rgba(229,227,218,.05) 30%,rgba(229,227,218,.95) 50%,rgba(229,227,218,.05) 70%,transparent 100%);
   filter:blur(2px); /* static blur; the sweep animates transform+opacity only */}
 .role-line{font-style:italic;font-weight:300;font-size:clamp(15px,1.6vw,19px);color:var(--nitrate);margin-top:3.5vh;}
-.role-line .tag{font-family:var(--mono);font-style:normal;font-size:9px;letter-spacing:.22em;color:rgba(142,149,141,.55);margin-left:14px;vertical-align:middle;}
 
 /* — SCENES (shared) — */
 .still .cell{position:relative;overflow:hidden;background:var(--gunmetal);}
-.still svg{display:block;width:100%;height:auto;}
+.still svg,.still img{display:block;width:100%;height:auto;}
+/* production stills wear the print's grade — static filter, never animated */
+.still img,#work3 .backdrop img{filter:grayscale(.35) saturate(.72) contrast(.97) brightness(.9);}
+.scene-links{display:flex;gap:38px;flex-wrap:wrap;}
 .defocus{position:absolute;inset:0;opacity:.92;transition:opacity .55s ease;
   filter:blur(9px) saturate(.9);transform:scale(1.06); /* static values — hover animates opacity only */}
 .still.rack:hover .defocus,body.force-focus .defocus{opacity:0;}
@@ -222,6 +224,7 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
 #work3 .backdrop{position:absolute;inset:-6%;display:flex;align-items:center;justify-content:center;opacity:.4;
   filter:blur(13px);transform:scale(1.05); /* defocused far plane — static filter; drags fade opacity only */}
 #work3 .backdrop svg{width:min(58vh,70%);height:auto;}
+#work3 .backdrop img{width:min(72%,880px);height:auto;box-shadow:0 30px 90px rgba(0,0,0,.5);}
 #work3 .fg{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;}
 #work3 .scene-info{position:absolute;left:0;bottom:4%;}
 /* near-plane ghost: a statically blurred clone of the foreground, revealed by opacity as focus leaves it */
@@ -239,7 +242,13 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
 .ff-thumb{position:absolute;left:0;top:-7px;width:1px;height:21px;background:var(--bone);}
 .ff:focus-visible{outline:1px dashed var(--bone);outline-offset:10px;}
 
-/* — SC 06 · CHARACTER STUDY (screenplay page) — */
+/* — SC 06 · THE INSERT — */
+#work4 .still{position:absolute;left:8%;top:15%;width:min(32%,360px);}
+#work4 .scene-info{position:absolute;right:0;bottom:4%;display:flex;flex-direction:column;align-items:flex-end;}
+#work4 .scene-info .logline{text-align:right;}
+#work4 .meta-row{justify-content:flex-end;}
+
+/* — SC 07 · CHARACTER STUDY (screenplay page) — */
 #script .frame{justify-content:center;align-items:center;}
 .page{background:var(--bone);color:#1B1C19;width:min(640px,100%);
   padding:clamp(30px,4.5vh,54px) clamp(22px,5.5vw,68px);
@@ -249,7 +258,6 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
 .page-head span:last-child{white-space:nowrap;}
 .slug{font-weight:700;letter-spacing:.05em;margin-bottom:22px;}
 .action{margin-bottom:22px;max-width:58ch;}
-.action .ph{color:rgba(27,28,25,.45);}
 .cue{text-align:center;margin:26px 0 2px;letter-spacing:.1em;}
 .paren{text-align:center;font-size:13px;color:rgba(27,28,25,.6);}
 .dialogue{width:min(38ch,86%);margin:4px auto 26px;text-align:left;}
@@ -271,7 +279,6 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
 .credit .name{font-family:var(--disp);font-size:clamp(19px,2.2vw,25px);letter-spacing:.09em;text-transform:uppercase;color:var(--bone);}
 .credit a.name{border-bottom:1px solid transparent;transition:border-color .25s;}
 .credit a.name:hover{border-color:var(--bone);}
-.credit .name .tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.2em;color:rgba(142,149,141,.5);margin-left:10px;vertical-align:super;}
 
 /* — REEL END · FIN — */
 #fin .frame{justify-content:center;align-items:center;}
@@ -287,6 +294,10 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
   #work1 .still{position:static;width:74%;margin:0 0 12vh auto;}
   #work1 .scene-info{position:static;}
   #work1 .frame{justify-content:center;}
+  #work4 .still{position:static;width:74%;margin:0 0 12vh 0;}
+  #work4 .scene-info{position:static;align-items:flex-start;}
+  #work4 .scene-info .logline{text-align:left;}
+  #work4 .meta-row{justify-content:flex-start;}
   #work3 .fg{position:static;flex:1;}
   #work3 .scene-info{position:static;margin-top:8vh;}
   .ff{position:static;width:100%;margin-top:26px;}
@@ -295,7 +306,6 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
   #timeline{display:none;} /* gate mode: the bars go minimal; a 100px notch strip is clutter */
   .credit,.credit>.fp-sharp,.credit>.fp-ghost{grid-template-columns:92px 1fr;gap:18px;}
   .credit .name{font-size:16px;letter-spacing:.07em;}
-  .credit .name .tag{display:none;}
 }
 @media (hover:none){
   .hover-hint{display:none;}
@@ -338,77 +348,62 @@ html.instant *,html.instant *::before,html.instant *::after{transition:none !imp
         <h1 id="name" aria-label="Parrv"><span class="fp" style="--d:0ms">P</span><span class="fp" style="--d:80ms">A</span><span class="fp" style="--d:160ms">R</span><span class="fp" style="--d:240ms">R</span><span class="fp" style="--d:320ms">V</span></h1>
         <div class="streak" aria-hidden="true"></div>
       </div>
-      <p class="role-line fp">Software engineer — obsessed with the intersection of engineering and experience.</p>
+      <p class="role-line fp">Creative developer &amp; designer — crafting extraordinary digital experiences.</p>
     </div></div>
   </section>
 
-  <section id="work1" data-ratio="1.85" data-slate="SC 03 · “PROJECT ONE” · PLACEHOLDER">
+  <section id="work1" data-ratio="1.85" data-slate="SC 03 · “UPSOSH”">
     <div class="safe"><div class="frame">
       <figure class="still fp" data-cursor="frame">
         <div class="cell">
-          <svg viewBox="0 0 600 400" role="img" aria-label="Placeholder test frame">
-            <rect width="600" height="400" fill="#232624"/>
-            <rect x="14" y="14" width="572" height="372" fill="none" stroke="#8E958D" stroke-width="1.5" opacity=".7"/>
-            <line x1="14" y1="14" x2="586" y2="386" stroke="#8E958D" stroke-width=".6" opacity=".35"/>
-            <line x1="586" y1="14" x2="14" y2="386" stroke="#8E958D" stroke-width=".6" opacity=".35"/>
-            <circle cx="300" cy="200" r="92" fill="none" stroke="#E5E3DA" stroke-width="1.5" opacity=".8"/>
-            <circle cx="300" cy="200" r="46" fill="none" stroke="#8E958D" stroke-width=".8" opacity=".6"/>
-            <line x1="300" y1="86" x2="300" y2="314" stroke="#E5E3DA" stroke-width=".8" opacity=".6"/>
-            <line x1="186" y1="200" x2="414" y2="200" stroke="#E5E3DA" stroke-width=".8" opacity=".6"/>
-            <rect x="286" y="30" width="28" height="12" fill="#8E958D" opacity=".5"/>
-            <rect x="286" y="358" width="28" height="12" fill="#8E958D" opacity=".5"/>
-            <rect x="30" y="194" width="12" height="12" fill="#8E958D" opacity=".5"/>
-            <rect x="558" y="194" width="12" height="12" fill="#8E958D" opacity=".5"/>
-            <text x="34" y="366" font-family="Courier Prime" font-size="15" fill="#8E958D" letter-spacing="2">REG CHART 01</text>
-          </svg>
+          <img src="stills/upsosh.jpg" alt="upSosh — event platform landing page: Where plans become moments" loading="lazy">
         </div>
-        <figcaption>Test frame 01 — placeholder still</figcaption>
+        <figcaption>upSosh — production still · upsosh.app</figcaption>
       </figure>
       <div class="scene-info fp">
-        <h2 class="scene-kicker">Project One — Placeholder</h2>
-        <p class="logline">Placeholder logline: one sentence on what this project was, and the single result that mattered.</p>
-        <div class="meta-row"><span><b>Role</b>Placeholder</span><span><b>Year</b>20XX</span></div>
+        <h2 class="scene-kicker">upSosh — the wide</h2>
+        <p class="logline">Micro-event booking platform with payment integration and real-time dashboards.</p>
+        <div class="meta-row"><span><b>Stack</b>TypeScript · Node · Postgres</span><span><b>Year</b>2026</span></div>
+        <div class="scene-links">
+          <a class="scene-link" href="https://www.upsosh.app/" target="_blank" rel="noopener" data-cursor="link" aria-label="Enter scene — upSosh live">Enter scene →</a>
+          <a class="scene-link" href="https://github.com/ParrvLuthra22/upSosh" target="_blank" rel="noopener" data-cursor="link" aria-label="upSosh source on GitHub">Source →</a>
+        </div>
       </div>
     </div></div>
   </section>
 
-  <section id="work2" data-ratio="1.85" data-slate="SC 04 · “PROJECT TWO” · PLACEHOLDER">
+  <section id="work2" data-ratio="1.85" data-slate="SC 04 · “CREATORLYFF”">
     <div class="safe"><div class="frame">
       <figure class="still rack fp" data-cursor="frame">
         <div class="cell">
-          <svg viewBox="0 0 600 400" role="img" aria-label="Placeholder grey-scale test chart">
-            <rect width="600" height="400" fill="#202320"/>
-            <rect x="14" y="14" width="572" height="372" fill="none" stroke="#8E958D" stroke-width="1.5" opacity=".7"/>
-            <g>
-              <rect x="60" y="90" width="60" height="180" fill="#101110"/><rect x="120" y="90" width="60" height="180" fill="#242723"/>
-              <rect x="180" y="90" width="60" height="180" fill="#3A3E39"/><rect x="240" y="90" width="60" height="180" fill="#555A53"/>
-              <rect x="300" y="90" width="60" height="180" fill="#757B72"/><rect x="360" y="90" width="60" height="180" fill="#9BA196"/>
-              <rect x="420" y="90" width="60" height="180" fill="#C4C2B8"/><rect x="480" y="90" width="60" height="180" fill="#E5E3DA"/>
-            </g>
-            <text x="60" y="302" font-family="Courier Prime" font-size="13" fill="#8E958D" letter-spacing="2">0.0</text>
-            <text x="497" y="302" font-family="Courier Prime" font-size="13" fill="#8E958D" letter-spacing="2">4.0</text>
-            <text x="34" y="366" font-family="Courier Prime" font-size="15" fill="#8E958D" letter-spacing="2">GREY SCALE 02</text>
-          </svg>
+          <img src="stills/creatorlyff.jpg" alt="CreatorLyff — creator marketplace landing page: Where brands meet their next favorite creator" loading="lazy">
         </div>
-        <figcaption>Test frame 02 — placeholder still<span class="hover-hint"> · hover to pull focus</span></figcaption>
+        <figcaption>CreatorLyff — production still<span class="hover-hint"> · hover to pull focus</span></figcaption>
       </figure>
       <div class="scene-info fp">
-        <h2 class="scene-kicker">Project Two — Placeholder</h2>
-        <p class="logline">Placeholder logline: a second project, described in the language of outcome rather than tooling.</p>
-        <div class="meta-row"><span><b>Role</b>Placeholder</span><span><b>Year</b>20XX</span></div>
-        <a class="scene-link" href="https://github.com/ParrvLuthra22" target="_blank" rel="noopener" data-cursor="link" aria-label="Enter scene — the work on GitHub">Enter scene →</a>
+        <h2 class="scene-kicker">CreatorLyff — the medium</h2>
+        <p class="logline">Full-stack creator marketplace — brands discover and collaborate with creators.</p>
+        <div class="meta-row"><span><b>Stack</b>TypeScript · Node · MongoDB</span><span><b>Year</b>2026</span></div>
+        <div class="scene-links">
+          <a class="scene-link" href="https://creatormarketplace.vercel.app/" target="_blank" rel="noopener" data-cursor="link" aria-label="Enter scene — CreatorLyff live">Enter scene →</a>
+          <a class="scene-link" href="https://github.com/ParrvLuthra22/creatormarketplace" target="_blank" rel="noopener" data-cursor="link" aria-label="CreatorLyff source on GitHub">Source →</a>
+        </div>
       </div>
     </div></div>
   </section>
 
-  <section id="work3" data-ratio="1.85" data-slate="SC 05 · “PROJECT THREE” · PLACEHOLDER">
+  <section id="work3" data-ratio="1.85" data-slate="SC 05 · “TUNEMATE”">
     <div class="safe"><div class="frame">
-      <div class="backdrop" aria-hidden="true"><svg id="star" viewBox="0 0 600 400"></svg></div>
+      <div class="backdrop" aria-hidden="true"><img src="stills/tunemate.jpg" alt="" loading="lazy"></div>
       <div class="fg">
-        <h2 class="bigtitle fp">Project<br>Three</h2>
+        <h2 class="bigtitle fp">Tune<br>Mate</h2>
         <div class="scene-info fp">
-          <p class="logline">Placeholder logline: the closest shot — the project that says the most about how Parrv thinks.</p>
-          <div class="meta-row"><span><b>Role</b>Placeholder</span><span><b>Year</b>20XX</span></div>
+          <p class="logline">Music-based dating app that matches users via Spotify habits and suggests concert dates. Pull focus to see it.</p>
+          <div class="meta-row"><span><b>Stack</b>React · Socket.io · Spotify API</span><span><b>Year</b>2026</span></div>
+          <div class="scene-links">
+            <a class="scene-link" href="https://music-match-bay.vercel.app/" target="_blank" rel="noopener" data-cursor="link" aria-label="Enter scene — TuneMate live">Enter scene →</a>
+            <a class="scene-link" href="https://github.com/ParrvLuthra22/musicMatch" target="_blank" rel="noopener" data-cursor="link" aria-label="TuneMate source on GitHub">Source →</a>
+          </div>
         </div>
       </div>
       <div class="ff" id="ff" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
@@ -420,29 +415,52 @@ html.instant *,html.instant *::before,html.instant *::after{transition:none !imp
     </div></div>
   </section>
 
-  <section id="script" data-ratio="1.375" data-slate="SC 06 · CHARACTER STUDY">
+  <section id="work4" data-ratio="1.85" data-slate="SC 06 · “FOODKHOJ”">
     <div class="safe"><div class="frame">
-      <div class="page fp">
-        <div class="page-head"><span>Parrv — “Portfolio” — shooting draft</span><span>p. 3</span></div>
-        <p class="slug">INT. STUDIO — DAY</p>
-        <p class="action">A desk lit by one monitor. PARRV works in silence, deleting more than he keeps. <span class="ph">(PLACEHOLDER action copy — replace with how you actually work: your habits, your standards, what you refuse to ship.)</span></p>
-        <p class="cue">PARRV</p>
-        <p class="paren">(without looking up)</p>
-        <p class="dialogue">Placeholder principle. One sentence about craft, stated plainly, the way you'd actually say it.</p>
-        <p class="action">He turns back to the screen. The cursor blinks. <span class="ph">(PLACEHOLDER — a closing beat in your own voice.)</span></p>
+      <figure class="still fp" data-cursor="frame">
+        <div class="cell">
+          <img src="stills/foodkhoj.jpg" alt="FoodKhoj — food delivery frontend: order food and track delivery in real time" loading="lazy">
+        </div>
+        <figcaption>FoodKhoj — production still · insert shot</figcaption>
+      </figure>
+      <div class="scene-info fp">
+        <h2 class="scene-kicker">FoodKhoj — the insert</h2>
+        <p class="logline">Responsive frontend for food delivery and real-time map-based order tracking.</p>
+        <div class="meta-row"><span><b>Stack</b>React · Tailwind · Leaflet</span><span><b>Year</b>2026</span></div>
+        <div class="scene-links">
+          <a class="scene-link" href="https://food-khoj.vercel.app/" target="_blank" rel="noopener" data-cursor="link" aria-label="Enter scene — FoodKhoj live">Enter scene →</a>
+          <a class="scene-link" href="https://github.com/ParrvLuthra22/FoodKhoj" target="_blank" rel="noopener" data-cursor="link" aria-label="FoodKhoj source on GitHub">Source →</a>
+        </div>
       </div>
     </div></div>
   </section>
 
-  <section id="credits" data-ratio="2.39" data-slate="SC 07 · CREDITS">
+  <section id="script" data-ratio="1.375" data-slate="SC 07 · CHARACTER STUDY">
+    <div class="safe"><div class="frame">
+      <div class="page fp">
+        <div class="page-head"><span>Parrv — “Portfolio” — shooting draft</span><span>p. 3</span></div>
+        <p class="slug">INT. STUDIO — NEW DELHI — DAY</p>
+        <p class="action">A desk lit by one monitor. PARRV works in silence, deleting more than he keeps. Every pixel has to serve a purpose; whatever fails to communicate clearly, or connect emotionally, gets cut.</p>
+        <p class="cue">PARRV</p>
+        <p class="paren">(without looking up)</p>
+        <p class="dialogue">Excellence lives in the margins. You refine until the perfection becomes invisible.</p>
+        <p class="action">He turns back to the screen. The cursor blinks. Underneath, the architecture is already built for tomorrow — scalable, adaptive, waiting to grow.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="credits" data-ratio="2.39" data-slate="SC 08 · CREDITS">
     <div class="safe"><div class="frame">
       <h2 class="vh">Credits and contact</h2>
       <div class="credit-roll">
         <div class="credit fp" style="--d:0ms"><span class="role">Directed by</span><span class="name">Parrv</span></div>
-        <div class="credit fp" style="--d:70ms"><span class="role">Written by</span><span class="name">Parrv</span></div>
-        <div class="credit fp" style="--d:140ms"><span class="role">Design &amp; code</span><span class="name">Parrv</span></div>
-        <div class="credit fp" style="--d:210ms"><span class="role">Email</span><a class="name" href="mailto:parrvluthra@gmail.com" data-cursor="link">parrvluthra@gmail.com</a></div>
-        <div class="credit fp" style="--d:280ms"><span class="role">GitHub</span><a class="name" href="https://github.com/ParrvLuthra22" target="_blank" rel="noopener" data-cursor="link">ParrvLuthra22</a></div>
+        <div class="credit fp" style="--d:60ms"><span class="role">Written by</span><span class="name">Parrv</span></div>
+        <div class="credit fp" style="--d:120ms"><span class="role">Design &amp; code</span><span class="name">Parrv</span></div>
+        <div class="credit fp" style="--d:180ms"><span class="role">Email</span><a class="name" href="mailto:parrvcodes@gmail.com" data-cursor="link">parrvcodes@gmail.com</a></div>
+        <div class="credit fp" style="--d:240ms"><span class="role">GitHub</span><a class="name" href="https://github.com/ParrvLuthra22" target="_blank" rel="noopener" data-cursor="link">ParrvLuthra22</a></div>
+        <div class="credit fp" style="--d:300ms"><span class="role">X</span><a class="name" href="https://x.com/LuthraParrv" target="_blank" rel="noopener" data-cursor="link">@LuthraParrv</a></div>
+        <div class="credit fp" style="--d:360ms"><span class="role">LinkedIn</span><a class="name" href="https://www.linkedin.com/in/parrv-luthra-73372b322/" target="_blank" rel="noopener" data-cursor="link">Parrv Luthra</a></div>
+        <div class="credit fp" style="--d:420ms"><span class="role">Location</span><span class="name">New Delhi, India</span></div>
       </div>
     </div></div>
   </section>
@@ -508,21 +526,10 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const instant=!!shot;
 if(instant) root.classList.add('instant');
 
-/* ---------- Siemens star (placeholder focus chart) ---------- */
-(function star(){
-  const svg=$('#star'); if(!svg) return;
-  const N=36,R=185,cx=300,cy=200; let d='';
-  for(let i=0;i<N;i+=2){
-    const a0=i/N*2*Math.PI, a1=(i+1)/N*2*Math.PI;
-    d+=`M${cx},${cy} L${(cx+R*Math.cos(a0)).toFixed(1)},${(cy+R*Math.sin(a0)).toFixed(1)} A${R},${R} 0 0 1 ${(cx+R*Math.cos(a1)).toFixed(1)},${(cy+R*Math.sin(a1)).toFixed(1)} Z`;
-  }
-  svg.innerHTML=`<rect width="600" height="400" fill="#1B1E1B"/><path d="${d}" fill="#8E958D" opacity=".75"/><circle cx="300" cy="200" r="10" fill="#E5E3DA"/><circle cx="300" cy="200" r="120" fill="none" stroke="#E5E3DA" stroke-width="1" opacity=".4"/>`;
-})();
-
 /* ---------- rack-focus hover layers: clone into .defocus (blur is static) ---------- */
 $$('.still.rack .cell').forEach(cell=>{
   const d=document.createElement('div'); d.className='defocus'; d.setAttribute('aria-hidden','true');
-  d.appendChild(cell.querySelector('svg').cloneNode(true));
+  d.appendChild(cell.querySelector('img,svg').cloneNode(true));
   cell.appendChild(d);
 });
 
@@ -669,7 +676,7 @@ tl.addEventListener('pointercancel',endScrub);
   function build(){
     if(built) return; built=true;
     bdSharp=bd.cloneNode(true);
-    const sv=bdSharp.querySelector('svg'); if(sv) sv.removeAttribute('id');
+    const sv=bdSharp.querySelector('svg,img'); if(sv) sv.removeAttribute('id');
     bdSharp.style.filter='none'; bdSharp.style.opacity='0';
     bd.after(bdSharp);
     ghost=fg.cloneNode(true); ghost.classList.add('ff-ghost'); ghost.setAttribute('aria-hidden','true');
