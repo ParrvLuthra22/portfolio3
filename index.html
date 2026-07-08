@@ -183,7 +183,7 @@ section{min-height:100vh;scroll-snap-align:start;position:relative;}
 #name{font-family:var(--disp);font-weight:400;line-height:.82;letter-spacing:.05em;color:var(--bone);
   font-size:min(calc(var(--fh,60vh) * .58), 25vw);user-select:none;}
 #name .fp{margin-right:.015em;}
-.title-block{position:relative;}
+.title-block{position:relative;contain:paint;} /* the streak sweeps past the block; without paint containment its transform grows the mobile layout viewport */
 .streak{position:absolute;left:-15%;top:52%;width:130%;height:2px;opacity:0;pointer-events:none;
   background:linear-gradient(90deg,transparent 0%,rgba(229,227,218,.05) 30%,rgba(229,227,218,.95) 50%,rgba(229,227,218,.05) 70%,transparent 100%);
   filter:blur(2px); /* static blur; the sweep animates transform+opacity only */}
