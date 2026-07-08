@@ -263,6 +263,9 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
 @keyframes roll{from{transform:translateY(58vh);}to{transform:translateY(0);}}
 @media (prefers-reduced-motion:reduce){.credit-roll.rolling{animation:none;}}
 .credit{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:baseline;}
+/* the focus-pull entrance wraps a .credit's columns in one layer — mirror the grid there,
+   or roles and names collapse into a single inline run (only visible outside shot mode) */
+.credit>.fp-sharp,.credit>.fp-ghost{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:baseline;}
 .credit .role{text-align:right;font-family:var(--mono);font-size:9.5px;letter-spacing:.26em;color:var(--nitrate);text-transform:uppercase;}
 .credit .name{text-align:left;}
 .credit .name{font-family:var(--disp);font-size:clamp(19px,2.2vw,25px);letter-spacing:.09em;text-transform:uppercase;color:var(--bone);}
@@ -289,7 +292,7 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
   .ff{position:static;width:100%;margin-top:26px;}
   #slate{left:16px;}#prod{display:none;}#tc{left:16px;}#rec{right:16px;}#ratio-hud{right:76px;}
   #report-btn{right:10px;}
-  .credit{grid-template-columns:92px 1fr;gap:18px;}
+  .credit,.credit>.fp-sharp,.credit>.fp-ghost{grid-template-columns:92px 1fr;gap:18px;}
   .credit .name{font-size:16px;letter-spacing:.07em;}
   .credit .name .tag{display:none;}
 }
