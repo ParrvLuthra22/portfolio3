@@ -1,20 +1,42 @@
-# PARRV — A Portfolio in 24 Seconds
+# PARRV PICTURES — The Backlot
 
-A portfolio directed as a short film. One HTML file, no framework, no build step.
+A portfolio shot on a studio backlot. No framework, no build step — one HTML file,
+one stylesheet, three scripts.
 
-Eight scenes behind a living matte that re-letterboxes per scene (2.39:1 → 1.85:1 →
-Academy 1.375:1 → a 4:1 slit at FIN). Scroll is the playhead — 576 frames, 24 seconds
-at 24fps, with the timecode in the bottom bar. That bar is also an editing timeline:
-click a scene notch to cut, or grab the track and scrub the reel.
+The film opens cold (2.39:1, scroll is the playhead), rolls a title, and arrives at
+**the backlot**: a studio plan with six sound stages, one per domain —
 
-The grammar is two verbs — **cut** and **pull focus** — and one house rule:
-`filter` values never animate. Every focus pull is an opacity crossfade between a
-sharp layer and a statically blurred clone. The grain is a canvas overlay of six
-pre-rendered noise tiles swapped at ~12fps; no SVG filters at runtime.
+- **Stage A · Features** — fullstack
+- **Stage B · Sci-Fi Unit** — AI
+- **Stage C · Documentary Unit** — data viz
+- **Stage D · Short Films** — mobile
+- **Stage E · The Lab** — machine learning
+- **Stage F · The Vault** — everything else
 
-Operable camera: SC 05 carries a working follow focus (drag or arrow keys), and the
-CAMERA REPORT in the top bar lets a visitor set the T-stop and EI of their own print —
-saved to that projector, held across visits.
+Walk a stage and its scenes roll: production stills captured from the live deploys,
+storyboard panels for the pictures without one. Hold a scene in frame and it counts
+as **shot**; shoot everything on a stage and you strike its **reel**.
+
+## The game
+
+Reels power the four **departments** — each a playable room, unlocked at 1/2/4/6 reels:
+
+1. **AD Dept — the slate**: hit the sticks on the exact frame; streaks pay double
+2. **Camera Dept — the focus pull**: keep a drifting subject inside the depth of field for 30s
+3. **Editorial — the cut**: rebuild a shuffled scene against the clock
+4. **Transport — the reel run**: roll the can past sandbags and C-stands; mind the boom
+
+XP promotes you up the crew ladder (PA → 2ND AC → 1ST AC → OPERATOR → DP → DIRECTOR),
+the **call sheet** tracks reels, medals and achievements, and a **wrap report** prints
+your run as a shareable poster. All six reels unseal the **outtakes** after the credits.
+Everything lives in `localStorage` — your projector, your print.
+
+In a hurry? **Producer's cut** (bottom bar, or the main gate on the plan) is the whole
+filmography as one plain sheet — live links, source links, no tour.
+
+House rules unchanged from the film: `filter` values never animate, grain is a canvas
+tile overlay, and the safelight red is budgeted — exactly five uses on the whole lot.
+Sound is synthesized WebAudio, MOS (muted) until you flip it.
 
 ## Run
 
@@ -25,7 +47,9 @@ python3 -m http.server 8126
 
 No dependencies. Fonts are local (League Gothic, Newsreader, Courier Prime — latin subsets).
 
-Deterministic screenshots for review: `?shot=<sectionid>` isolates a scene,
-plus `&focus=1` (rack focus), `&ff=1` (follow focus far), `&report=1` (camera report open).
+Deterministic screenshots for review: `?shot=<sectionid>` isolates a scene
+(`leader`, `title`, `backlot`, `script`, `credits`, `fin`, `outtakes`), and
+`?shot=stage-a`…`stage-f`, `?shot=dept-ad|camera|edit|runner`, `?shot=pcut`
+open the overlay sets. `&report=1` opens the camera report.
 
-Respects `prefers-reduced-motion`; degrades to a plain readable document without JavaScript.
+Respects `prefers-reduced-motion`; degrades to a plain readable filmography without JavaScript.

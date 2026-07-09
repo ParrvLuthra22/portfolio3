@@ -1,0 +1,274 @@
+/* ============ THE LOT — hub, sets, departments, papers ============
+   Same print as the film: silver mids on halide, mono chrome, 1px lines.
+   filter values are never animated — entrances and reveals move opacity only. */
+
+/* ---------- SC 03 · the studio plan (hub) ---------- */
+#backlot .frame{min-height:0;}
+#lot-map{flex:1;min-height:0;display:grid;gap:13px;
+  grid-template-columns:1fr 1fr 1fr minmax(150px,200px);
+  grid-template-rows:auto minmax(0,1fr) minmax(0,1fr);}
+#lot-map[hidden]{display:none;}
+
+.plan-head{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--nitrate);
+  border-bottom:1px solid rgba(142,149,141,.25);padding-bottom:10px;}
+.plan-head b{font-weight:400;color:var(--bone);}
+.plan-head .plan-north{color:rgba(142,149,141,.55);letter-spacing:.14em;}
+
+.stg{position:relative;display:block;text-align:left;background:rgba(229,227,218,.015);
+  border:1px solid rgba(142,149,141,.32);padding:14px 16px;cursor:inherit;color:var(--nitrate);
+  font-family:var(--mono);min-height:0;transition:border-color .3s,background-color .3s;}
+.stg:hover,.stg:focus-visible{border-color:var(--bone);background:rgba(229,227,218,.04);}
+.stg-letter{display:block;font-family:var(--disp);font-weight:400;line-height:.9;color:var(--nitrate);
+  font-size:clamp(34px,7.5vh,62px);letter-spacing:.04em;transition:color .3s;}
+.stg:hover .stg-letter,.stg:focus-visible .stg-letter,.stg.visited .stg-letter{color:var(--bone);}
+.stg-unit{position:absolute;left:16px;bottom:30px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--bone);}
+.stg-domain{position:absolute;left:16px;bottom:12px;font-family:var(--body);font-style:italic;font-size:12px;
+  letter-spacing:.02em;text-transform:none;color:var(--nitrate);}
+.stg-count{position:absolute;right:14px;bottom:12px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(142,149,141,.6);}
+/* the stage reel: an empty spool until every scene inside is shot */
+.stg-reel{position:absolute;right:14px;top:14px;width:13px;height:13px;border-radius:50%;
+  border:1px solid var(--nitrate);transition:background-color .3s,border-color .3s;}
+.stg.reeled .stg-reel{background:var(--bone);border-color:var(--bone);}
+/* red budget #4 — the moment a reel is struck, one safelight flash, then it settles to bone */
+.stg.reel-flash .stg-reel{animation:reelflash 1.2s steps(1) 1;}
+@keyframes reelflash{0%{background:var(--safelight);border-color:var(--safelight);}70%{background:var(--safelight);border-color:var(--safelight);}100%{background:var(--bone);border-color:var(--bone);}}
+
+.dep-strip{grid-column:4;grid-row:2/4;display:flex;flex-direction:column;gap:13px;min-height:0;}
+.dep{position:relative;flex:1;display:block;text-align:left;min-height:0;background:none;
+  border:1px solid rgba(142,149,141,.32);padding:10px 12px;cursor:inherit;color:var(--nitrate);
+  font-family:var(--mono);text-transform:uppercase;transition:border-color .3s;}
+.dep-name{display:block;font-size:10px;letter-spacing:.2em;color:var(--bone);}
+.dep-role{display:block;font-size:9px;letter-spacing:.14em;color:rgba(142,149,141,.6);margin-top:4px;}
+.dep-state{position:absolute;left:12px;bottom:10px;font-size:9px;letter-spacing:.18em;color:rgba(142,149,141,.75);}
+.dep-medal{position:absolute;right:12px;top:10px;font-size:9px;letter-spacing:.14em;color:var(--bone);}
+.dep:not(.locked):hover,.dep:not(.locked):focus-visible{border-color:var(--bone);}
+/* a dark stage: hatched glass, waiting for power */
+.dep.locked{color:rgba(142,149,141,.5);
+  background:repeating-linear-gradient(45deg,rgba(142,149,141,.05) 0 1px,transparent 1px 8px);}
+.dep.locked .dep-name{color:rgba(142,149,141,.55);}
+
+.plan-foot{grid-column:1/-1;display:flex;justify-content:space-between;gap:18px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(142,149,141,.55);}
+.plan-foot a{color:var(--nitrate);border-bottom:1px solid rgba(142,149,141,.35);padding-bottom:2px;}
+.plan-foot a:hover{color:var(--bone);border-color:var(--bone);}
+
+/* ---------- the sets: a stage interior / a department, as an overlay ---------- */
+.set{position:fixed;inset:0;z-index:55;background:#121411;overflow-y:auto;overscroll-behavior:contain;
+  opacity:0;transition:opacity .4s ease;scrollbar-width:none;}
+.set::-webkit-scrollbar{display:none;}
+.set.on{opacity:1;}
+.set::before{content:'';position:fixed;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 115% 85% at 50% 44%, rgba(229,227,218,.04) 0%, transparent 52%, rgba(5,6,5,.5) 100%);}
+body.set-open{overflow:hidden;}
+.set-safe{position:relative;min-height:100%;padding:calc(var(--bar-y) + 26px) calc(var(--bar-x) + 30px);
+  display:flex;flex-direction:column;}
+.set-head{display:flex;align-items:baseline;gap:26px;border-bottom:1px solid rgba(142,149,141,.25);
+  padding-bottom:16px;margin-bottom:6vh;flex-wrap:wrap;}
+.set-head .set-letter{font-family:var(--disp);font-weight:400;font-size:clamp(38px,6vh,56px);line-height:.9;color:var(--bone);letter-spacing:.04em;}
+.set-head .set-title{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--bone);}
+.set-head .set-sub{font-family:var(--body);font-style:italic;font-size:14px;color:var(--nitrate);}
+.set-head .set-prog{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--nitrate);}
+.set-back{background:none;border:none;font-family:var(--mono);font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--nitrate);padding:8px 0;cursor:inherit;align-self:flex-start;}
+.set-back:hover,.set-back:focus-visible{color:var(--bone);}
+.set-head .set-back{align-self:auto;}
+
+/* a scene inside a stage: still plated one side, info the other; mirrored on alternates */
+.scene{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:6vw;align-items:center;
+  margin-bottom:11vh;opacity:0;transition:opacity .8s cubic-bezier(.3,.6,.2,1);}
+.scene.on{opacity:1;}
+.scene:nth-child(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr);}
+.scene:nth-child(even) .still{order:2;}
+.scene .take{font-family:var(--mono);font-size:9px;letter-spacing:.22em;color:rgba(142,149,141,.6);
+  text-transform:uppercase;margin-bottom:12px;min-height:1.2em;}
+.scene .take b{font-weight:400;color:var(--bone);}
+.scene .flag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--bone);
+  border:1px solid rgba(142,149,141,.5);padding:4px 8px;margin-bottom:14px;text-transform:uppercase;}
+/* storyboard panels arrive unfiltered — they are already art-department paper */
+.scene.board .still img{filter:none;}
+
+/* ---------- department interiors (games) ---------- */
+.dept-room{flex:1;display:flex;flex-direction:column;min-height:0;}
+.dept-hud{display:flex;gap:34px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--nitrate);margin-bottom:4vh;}
+.dept-hud b{font-weight:400;color:var(--bone);letter-spacing:.18em;}
+.dept-stage{position:relative;flex:1;min-height:280px;border:1px solid rgba(142,149,141,.25);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:20px;}
+.dept-note{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(142,149,141,.6);margin-top:14px;}
+.dept-act{background:none;border:1px solid rgba(142,149,141,.5);color:var(--bone);
+  font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  padding:12px 22px;cursor:inherit;margin-top:3vh;align-self:flex-start;transition:border-color .3s;}
+.dept-act:hover,.dept-act:focus-visible{border-color:var(--bone);}
+.dept-verdict{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--bone);}
+
+/* the clapper: line-art sticks; the arm rotates — transform only */
+.clap{position:relative;width:min(420px,80%);}
+.clap-board{border:1px solid var(--nitrate);background:var(--halide);padding:18px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--nitrate);text-transform:uppercase;}
+.clap-board .row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(142,149,141,.25);padding:7px 0;}
+.clap-board .row:last-child{border-bottom:none;}
+.clap-board .row b{color:var(--bone);font-weight:400;}
+.clap-arm{position:absolute;left:0;top:-16px;width:100%;height:16px;transform-origin:0 100%;
+  background:repeating-linear-gradient(115deg,var(--bone) 0 22px,var(--halide) 22px 44px);
+  border:1px solid var(--nitrate);}
+/* red budget #5 — a perfect slate stamps once in safelight, then it is spent */
+.clap-mark{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%) rotate(-8deg);
+  font-family:var(--mono);font-size:15px;letter-spacing:.3em;color:var(--bone);border:1px solid var(--bone);
+  padding:8px 14px;opacity:0;pointer-events:none;text-transform:uppercase;background:rgba(14,15,13,.82);}
+.clap-mark.show{opacity:1;}
+.clap-mark.perfect{color:var(--safelight);border-color:var(--safelight);}
+
+/* the follow focus (rebuilt for the camera department) */
+.ff{width:min(420px,86%);font-family:var(--mono);color:var(--nitrate);text-transform:uppercase;
+  touch-action:none;user-select:none;-webkit-user-select:none;}
+.ff-title{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.22em;
+  color:rgba(142,149,141,.65);margin-bottom:14px;}
+.ff-title b{font-weight:400;color:var(--bone);letter-spacing:.18em;}
+.ff-scale{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.1em;margin-bottom:5px;}
+.ff-track{display:block;position:relative;height:20px;border-top:1px solid rgba(142,149,141,.4);
+  background-image:linear-gradient(90deg,rgba(142,149,141,.3) 1px,transparent 1px);
+  background-size:calc(100%/16) 7px;background-repeat:repeat-x;}
+.ff-thumb{position:absolute;left:0;top:-7px;width:1px;height:21px;background:var(--bone);}
+.ff-subject{position:absolute;top:-32px;width:3px;height:16px;background:var(--nitrate);margin-left:-1.5px;}
+.ff:focus-visible{outline:1px dashed var(--bone);outline-offset:10px;}
+/* the subject chart blurs by crossfading two statically-filtered layers — opacity only */
+.ff-chart{position:relative;width:min(300px,64%);margin:0 auto 5vh;}
+.ff-chart .chart-face{display:block;width:100%;}
+.ff-chart .soft{position:absolute;inset:0;filter:blur(9px);opacity:0;}
+
+/* editorial: six frames on a bench */
+.cutbench{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;width:min(760px,94%);}
+.cutbench .frame-cell{position:relative;border:1px solid rgba(142,149,141,.4);background:var(--halide);
+  aspect-ratio:3/4;overflow:hidden;cursor:inherit;padding:0;}
+.cutbench .frame-cell img{position:absolute;width:600%;height:auto;max-width:none;left:calc(var(--i) * -100%);top:50%;transform:translateY(-50%);
+  filter:grayscale(.35) saturate(.72) contrast(.97) brightness(.9);}
+.cutbench .frame-cell.held{border-color:var(--bone);outline:1px dashed var(--bone);outline-offset:-5px;}
+.cutbench .frame-cell .no{position:absolute;left:4px;top:2px;font-family:var(--mono);font-size:9px;color:var(--bone);letter-spacing:.1em;
+  background:rgba(14,15,13,.7);padding:1px 4px;}
+
+/* transport: the runner canvas wears the same print */
+.runner-wrap{width:min(760px,94%);}
+.runner-wrap canvas{display:block;width:100%;height:auto;background:var(--halide);}
+
+/* ---------- papers: producer's cut & call sheet ---------- */
+.paper{position:fixed;z-index:62;background:var(--bone);color:#1B1C19;font-family:var(--mono);
+  box-shadow:0 1px 0 rgba(229,227,218,.12), 0 30px 80px rgba(0,0,0,.55);}
+.paper-head{display:flex;justify-content:space-between;gap:14px;font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(27,28,25,.55);
+  border-bottom:1px solid rgba(27,28,25,.25);padding-bottom:10px;margin-bottom:16px;}
+.paper .x{background:none;border:none;font:inherit;color:#1B1C19;letter-spacing:.18em;
+  text-transform:uppercase;cursor:inherit;padding:0 0 0 12px;}
+.paper .x:hover{text-decoration:underline;}
+
+#pcut{inset:0;z-index:64;overflow-y:auto;overscroll-behavior:contain;padding:0 clamp(18px,8vw,120px) 10vh;}
+#pcut .paper-head{position:sticky;top:0;background:var(--bone);padding-top:20px;z-index:1;}
+#pcut .pcut-note{font-size:11px;letter-spacing:.08em;color:rgba(27,28,25,.6);max-width:64ch;line-height:1.7;margin-top:14px;}
+#lot-data>.scene-kicker{display:none;}
+#lot-data .unit{margin-top:34px;}
+#lot-data h3{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;
+  border-bottom:1px solid rgba(27,28,25,.3);padding-bottom:8px;}
+#lot-data h3 b{font-weight:700;}
+#lot-data h3 span{font-size:9px;letter-spacing:.2em;color:rgba(27,28,25,.55);}
+#lot-data ol{list-style:none;}
+#lot-data li{display:block;padding:13px 0;border-bottom:1px solid rgba(27,28,25,.14);
+  font-family:var(--body);font-size:14.5px;line-height:1.6;font-weight:350;}
+#lot-data li b{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-right:6px;}
+#lot-data li .pl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
+  margin-left:14px;color:#1B1C19;border-bottom:1px solid rgba(27,28,25,.4);padding-bottom:1px;}
+#lot-data li .pl:hover{border-color:#1B1C19;}
+#lot-data li .pmeta{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(27,28,25,.5);margin-top:6px;}
+/* on the dark page (no-JS fallback), the same sheet reads in silver */
+#backlot #lot-data{color:var(--bone);}
+#backlot #lot-data>.scene-kicker{display:block;}
+#backlot #lot-data h3{border-color:rgba(142,149,141,.35);}
+#backlot #lot-data h3 span,#backlot #lot-data li .pmeta{color:rgba(142,149,141,.7);}
+#backlot #lot-data li{border-color:rgba(142,149,141,.18);}
+#backlot #lot-data li .pl{color:var(--bone);border-color:rgba(142,149,141,.5);}
+
+#sheet{top:calc(var(--bar-y) + 12px);right:24px;width:min(400px,calc(100vw - 32px));
+  max-height:calc(100vh - var(--bar-y)*2 - 24px);overflow-y:auto;padding:22px 24px 18px;}
+#sheet .sh-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:9px 0;
+  border-bottom:1px solid rgba(27,28,25,.14);}
+#sheet .sh-row b{font-weight:700;}
+#sheet .xpbar{position:relative;height:1px;background:rgba(27,28,25,.25);margin:14px 0 4px;}
+#sheet .xpbar i{position:absolute;left:0;top:-1px;height:3px;background:#1B1C19;transition:width .5s ease;}
+#sheet .xpnext{font-size:9px;letter-spacing:.16em;color:rgba(27,28,25,.5);text-transform:uppercase;}
+#sheet .reelrow{display:flex;gap:9px;padding:10px 0;}
+#sheet .reelrow i{width:12px;height:12px;border-radius:50%;border:1px solid #1B1C19;}
+#sheet .reelrow i.got{background:#1B1C19;}
+#sheet .ach{font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 0;color:rgba(27,28,25,.85);}
+#sheet .ach.miss{color:rgba(27,28,25,.35);}
+#sheet .sh-act{display:block;width:100%;background:#1B1C19;color:var(--bone);border:none;
+  font:inherit;font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:12px;margin-top:16px;cursor:inherit;}
+
+/* ---------- HUD additions ---------- */
+#rank-hud{right:248px;bottom:15px;}
+#rank-hud b{font-weight:400;color:var(--bone);letter-spacing:.18em;}
+#rank-hud span{margin-left:12px;color:rgba(142,149,141,.7);}
+#sheet-btn{position:absolute;right:110px;bottom:11px;pointer-events:auto;background:none;border:none;
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--nitrate);
+  text-transform:uppercase;padding:4px 6px;cursor:inherit;}
+#sheet-btn:hover,#sheet-btn[aria-expanded="true"]{color:var(--bone);}
+#mos-btn{position:absolute;left:150px;top:11px;pointer-events:auto;background:none;border:none;
+  font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--nitrate);
+  text-transform:uppercase;padding:4px 6px;cursor:inherit;}
+#mos-btn[aria-pressed="true"],#mos-btn:hover{color:var(--bone);}
+#pcut-btn{left:224px;top:15px;pointer-events:auto;color:rgba(142,149,141,.7);}
+#pcut-btn:hover{color:var(--bone);}
+body.game-on #timeline{left:400px;}
+#toast{left:50%;transform:translateX(-50%);bottom:11px;color:var(--bone);opacity:0;transition:opacity .45s ease;
+  max-width:44vw;overflow:hidden;text-overflow:ellipsis;background:#060606;padding:4px 14px;}
+#toast.show{opacity:1;}
+
+/* the production credit yields its spot to the crew rank once the game wakes */
+body.game-on #prod{display:none;}
+
+/* ---------- outtakes ---------- */
+#outtakes .frame{justify-content:center;align-items:center;}
+.ot-locked{font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:rgba(142,149,141,.55);
+  text-transform:uppercase;text-align:center;line-height:2.4;}
+.ot-locked span{font-size:9px;letter-spacing:.22em;}
+.ot-roll{width:min(680px,100%);}
+.ot-roll .ot-head{font-family:var(--mono);font-size:10px;letter-spacing:.26em;color:var(--bone);
+  text-transform:uppercase;border-bottom:1px solid rgba(142,149,141,.3);padding-bottom:12px;margin-bottom:26px;}
+.ot-take{margin-bottom:26px;opacity:0;transition:opacity .8s ease;}
+.ot-take.on{opacity:1;}
+.ot-take .ot-slate{font-family:var(--mono);font-size:9px;letter-spacing:.22em;color:rgba(142,149,141,.65);text-transform:uppercase;margin-bottom:6px;}
+.ot-take p{font-size:15.5px;line-height:1.65;color:var(--bone);max-width:58ch;}
+.ot-take p i{color:var(--nitrate);}
+
+/* ---------- mobile / gate ---------- */
+@media (max-width:700px),(orientation:portrait){
+  #lot-map{display:flex;flex-direction:column;gap:10px;}
+  #lot-map[hidden]{display:none;}
+  .stg{min-height:78px;padding:12px 14px 34px;}
+  .stg-letter{font-size:30px;display:inline-block;}
+  .stg-unit{position:static;display:inline-block;margin-left:14px;vertical-align:top;margin-top:8px;}
+  .stg-domain{left:14px;bottom:12px;}
+  .dep{min-height:60px;}
+  .set-safe{padding:calc(var(--bar-y) + 22px) 20px;}
+  .scene,.scene:nth-child(even){display:block;}
+  .scene .still{margin-bottom:22px;}
+  .scene{margin-bottom:12vh;}
+  #pcut-btn{display:none;} /* the gate crew finds the producer's cut at the main gate on the plan */
+  #mos-btn{left:130px;}
+  #rank-hud{display:none;}
+  #sheet-btn{right:88px;}
+  #toast{max-width:64vw;}
+  /* the tannoy takes the bar: while a toast plays, the slate yields (no room for both on the gate) */
+  #matte-top:has(#toast.show) #slate{opacity:0;}
+  .cutbench{grid-template-columns:repeat(3,1fr);}
+  #pcut{padding:0 18px 10vh;}
+}
+
+/* ---------- reduced motion / shot mode ---------- */
+@media (prefers-reduced-motion:reduce){
+  .set,.scene,.ot-take,#toast,.stg,.dep,#sheet .xpbar i{transition:none !important;}
+  .stg.reel-flash .stg-reel{animation:none;}
+}
+html.instant .set,html.instant .scene,html.instant .ot-take{transition:none !important;}

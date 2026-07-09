@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Parrv — creative developer & designer, crafting extraordinary digital experiences. A portfolio directed as a short film: nine scenes, one reel, 24 seconds.">
+<meta name="description" content="Parrv — creative developer & designer, crafting extraordinary digital experiences. A portfolio shot on a studio backlot: six sound stages, four departments, one reel.">
 <meta name="theme-color" content="#0E0F0D">
-<title>PARRV — A Portfolio in 24 Seconds</title>
+<title>PARRV PICTURES — The Backlot</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23060606'/%3E%3Crect y='18' width='64' height='28' fill='%23171A17'/%3E%3Crect y='18' width='64' height='1.5' fill='%238E958D' opacity='.5'/%3E%3Crect y='44.5' width='64' height='1.5' fill='%238E958D' opacity='.5'/%3E%3Ccircle cx='55' cy='9' r='3.5' fill='%237D2A1E'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PARRV — A Portfolio in 24 Seconds">
-<meta property="og:description" content="Creative developer & designer, crafting extraordinary digital experiences. A portfolio directed as a short film.">
+<meta property="og:title" content="PARRV PICTURES — The Backlot">
+<meta property="og:description" content="Creative developer & designer, crafting extraordinary digital experiences. A portfolio shot on a studio backlot — explore the stages, earn your rank.">
 <meta property="og:url" content="https://parrvluthra22.github.io/portfolio3/">
 <meta property="og:image" content="https://parrvluthra22.github.io/portfolio3/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -168,7 +168,7 @@ span.fp>.fp-sharp{display:inline-block;}
 .fp.on>.fp-ghost{opacity:0;}
 
 /* ============ SECTIONS ============ */
-section{min-height:100vh;scroll-snap-align:start;position:relative;}
+main>section{min-height:100vh;scroll-snap-align:start;position:relative;}
 .safe{min-height:100vh;display:flex;flex-direction:column;padding:70px 48px;}
 .frame{position:relative;flex:1;display:flex;flex-direction:column;}
 
@@ -193,7 +193,7 @@ section{min-height:100vh;scroll-snap-align:start;position:relative;}
 .still .cell{position:relative;overflow:hidden;background:var(--gunmetal);}
 .still svg,.still img{display:block;width:100%;height:auto;}
 /* production stills wear the print's grade — static filter, never animated */
-.still img,#work3 .backdrop img{filter:grayscale(.35) saturate(.72) contrast(.97) brightness(.9);}
+.still img{filter:grayscale(.35) saturate(.72) contrast(.97) brightness(.9);}
 .scene-links{display:flex;gap:38px;flex-wrap:wrap;}
 .defocus{position:absolute;inset:0;opacity:.92;transition:opacity .55s ease;
   filter:blur(9px) saturate(.9);transform:scale(1.06); /* static values — hover animates opacity only */}
@@ -204,51 +204,11 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
 .meta-row{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--nitrate);text-transform:uppercase;margin-top:18px;display:flex;gap:34px;}
 .meta-row span b{display:block;color:rgba(142,149,141,.68);font-weight:400;margin-bottom:4px;}
 
-/* — SC 03 · WIDE — */
-#work1 .still{position:absolute;right:14%;top:16%;width:min(30%,340px);}
-#work1 .scene-info{position:absolute;left:0;bottom:4%;}
-/* — SC 04 · MEDIUM — */
-/* reblocked: still plates the upper-left, the info block is an insert card
-   interlocking its lower-right corner — no side-by-side column grid. */
-#work2 .still{position:absolute;left:0;top:6%;width:min(56%,660px);}
-#work2 .scene-info{position:absolute;left:47%;bottom:8%;max-width:46ch;
-  background:#171A17;padding:38px 0 0 44px;}
 .scene-link{display:inline-block;position:relative;font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--bone);margin-top:34px;padding:10px 2px;text-transform:uppercase;}
 .scene-link::after{content:'';position:absolute;left:0;bottom:4px;width:100%;height:1px;background:rgba(142,149,141,.4);transform-origin:left;transition:background .3s;}
 .scene-link::before{content:'';position:absolute;left:0;bottom:4px;width:100%;height:1px;background:var(--safelight);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.6,0,.2,1);}
 .scene-link:hover::before{transform:scaleX(1);}
-/* — SC 05 · CLOSE-UP (operable) — */
-#work3 .frame{justify-content:center;}
-.bigtitle{font-family:var(--disp);font-weight:400;line-height:.85;letter-spacing:.04em;color:var(--bone);
-  font-size:min(calc(var(--fh,60vh) * .3),17vw);text-transform:uppercase;}
-#work3 .backdrop{position:absolute;inset:-6%;display:flex;align-items:center;justify-content:center;opacity:.4;
-  filter:blur(13px);transform:scale(1.05); /* defocused far plane — static filter; drags fade opacity only */}
-#work3 .backdrop svg{width:min(58vh,70%);height:auto;}
-#work3 .backdrop img{width:min(72%,880px);height:auto;box-shadow:0 30px 90px rgba(0,0,0,.5);}
-#work3 .fg{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;}
-#work3 .scene-info{position:absolute;left:0;bottom:4%;}
-/* near-plane ghost: a statically blurred clone of the foreground, revealed by opacity as focus leaves it */
-.ff-ghost{position:absolute;inset:0;filter:blur(11px);opacity:0;pointer-events:none;}
-/* the follow focus: a lens scale you drag. distance marks, thumb, live readout. */
-.ff{position:absolute;right:0;bottom:4%;width:min(300px,40%);font-family:var(--mono);
-  color:var(--nitrate);text-transform:uppercase;touch-action:none;user-select:none;-webkit-user-select:none;}
-.ff-title{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.22em;
-  color:rgba(142,149,141,.65);margin-bottom:14px;}
-.ff-title b{font-weight:400;color:var(--bone);letter-spacing:.18em;}
-.ff-scale{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.1em;margin-bottom:5px;}
-.ff-track{display:block;position:relative;height:20px;border-top:1px solid rgba(142,149,141,.4);
-  background-image:linear-gradient(90deg,rgba(142,149,141,.3) 1px,transparent 1px);
-  background-size:calc(100%/16) 7px;background-repeat:repeat-x;}
-.ff-thumb{position:absolute;left:0;top:-7px;width:1px;height:21px;background:var(--bone);}
-.ff:focus-visible{outline:1px dashed var(--bone);outline-offset:10px;}
-
-/* — SC 06 · THE INSERT — */
-#work4 .still{position:absolute;left:8%;top:15%;width:min(32%,360px);}
-#work4 .scene-info{position:absolute;right:0;bottom:4%;display:flex;flex-direction:column;align-items:flex-end;}
-#work4 .scene-info .logline{text-align:right;}
-#work4 .meta-row{justify-content:flex-end;}
-
-/* — SC 07 · CHARACTER STUDY (screenplay page) — */
+/* — SC 04 · CHARACTER STUDY (screenplay page) — */
 #script .frame{justify-content:center;align-items:center;}
 .page{background:var(--bone);color:#1B1C19;width:min(640px,100%);
   padding:clamp(30px,4.5vh,54px) clamp(22px,5.5vw,68px);
@@ -262,7 +222,7 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
 .paren{text-align:center;font-size:13px;color:rgba(27,28,25,.6);}
 .dialogue{width:min(38ch,86%);margin:4px auto 26px;text-align:left;}
 
-/* — SC 07 · CREDITS — */
+/* — SC 05 · CREDITS — */
 #credits .frame{justify-content:center;align-items:center;}
 /* real credit-roll geometry: two columns around a center gutter */
 .credit-roll{width:min(760px,100%);display:flex;flex-direction:column;gap:26px;}
@@ -288,19 +248,6 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
 
 /* ============ MOBILE / GATE MODE ============ */
 @media (max-width:700px),(orientation:portrait){
-  #work2 .frame{display:flex;flex-direction:column;justify-content:center;}
-  #work2 .still{position:static;width:100%;}
-  #work2 .scene-info{position:static;max-width:none;background:none;padding:0;margin-top:30px;}
-  #work1 .still{position:static;width:74%;margin:0 0 12vh auto;}
-  #work1 .scene-info{position:static;}
-  #work1 .frame{justify-content:center;}
-  #work4 .still{position:static;width:74%;margin:0 0 12vh 0;}
-  #work4 .scene-info{position:static;align-items:flex-start;}
-  #work4 .scene-info .logline{text-align:left;}
-  #work4 .meta-row{justify-content:flex-start;}
-  #work3 .fg{position:static;flex:1;}
-  #work3 .scene-info{position:static;margin-top:8vh;}
-  .ff{position:static;width:100%;margin-top:26px;}
   #slate{left:16px;}#prod{display:none;}#tc{left:16px;}#rec{right:16px;}#ratio-hud{right:76px;}
   #report-btn{right:10px;}
   #timeline{display:none;} /* gate mode: the bars go minimal; a 100px notch strip is clutter */
@@ -322,9 +269,9 @@ figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:rgba(
 /* ============ SHOT MODE (deterministic screenshots) ============ */
 html.instant *,html.instant *::before,html.instant *::after{transition:none !important;animation:none !important;}
 </style>
+<link rel="stylesheet" href="css/lot.css">
 <noscript><style>
   .matte,#grain,#cursor,#exposure,#report,#report-btn{display:none!important;}
-  #work3 .backdrop{opacity:.25;}
 </style></noscript>
 </head>
 <body>
@@ -352,90 +299,132 @@ html.instant *,html.instant *::before,html.instant *::after{transition:none !imp
     </div></div>
   </section>
 
-  <section id="work1" data-ratio="1.85" data-slate="SC 03 · “UPSOSH”">
+  <section id="backlot" data-ratio="2.39" data-slate="SC 03 · EXT. THE BACKLOT">
     <div class="safe"><div class="frame">
-      <figure class="still fp" data-cursor="frame">
-        <div class="cell">
-          <img src="stills/upsosh.jpg" alt="upSosh — event platform landing page: Where plans become moments" loading="lazy">
-        </div>
-        <figcaption>upSosh — production still · upsosh.app</figcaption>
-      </figure>
-      <div class="scene-info fp">
-        <h2 class="scene-kicker">upSosh — the wide</h2>
-        <p class="logline">Micro-event booking platform with payment integration and real-time dashboards.</p>
-        <div class="meta-row"><span><b>Stack</b>TypeScript · Node · Postgres</span><span><b>Year</b>2026</span></div>
-        <div class="scene-links">
-          <a class="scene-link" href="https://www.upsosh.app/" target="_blank" rel="noopener" data-cursor="link" aria-label="Enter scene — upSosh live">Enter scene →</a>
-          <a class="scene-link" href="https://github.com/ParrvLuthra22/upSosh" target="_blank" rel="noopener" data-cursor="link" aria-label="upSosh source on GitHub">Source →</a>
-        </div>
+      <h2 class="vh">The backlot — six sound stages, four departments</h2>
+      <div id="lot-map" hidden></div>
+      <!-- static filmography: the no-JS fallback, the Producer's Cut, and the data lot.js reads.
+           one project = one <li>; name in <b>, logline in the text after the em dash. -->
+      <div id="lot-data">
+        <p class="scene-kicker">Filmography — by unit</p>
+
+        <section class="unit" data-stage="a" data-unit="Features" data-domain="Fullstack">
+          <h3><b>Stage A · Features</b><span>Fullstack</span></h3>
+          <ol>
+            <li data-id="upsosh" data-still="stills/upsosh.jpg" data-stack="TypeScript · Node · Postgres" data-year="2026"
+                data-live="https://www.upsosh.app/" data-src="https://github.com/ParrvLuthra22/upSosh">
+              <b>upSosh</b> — Micro-event booking platform with payment integration and real-time dashboards.
+              <span class="pmeta">TypeScript · Node · Postgres · 2026</span><a class="pl" href="https://www.upsosh.app/" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/upSosh" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="creatorlyff" data-still="stills/creatorlyff.jpg" data-stack="TypeScript · Node · MongoDB" data-year="2026"
+                data-live="https://creatormarketplace.vercel.app/" data-src="https://github.com/ParrvLuthra22/creatormarketplace">
+              <b>CreatorLyff</b> — Full-stack creator marketplace — brands discover and collaborate with creators.
+              <span class="pmeta">TypeScript · Node · MongoDB · 2026</span><a class="pl" href="https://creatormarketplace.vercel.app/" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/creatormarketplace" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="tunemate" data-still="stills/tunemate.jpg" data-stack="React · Socket.io · Spotify API" data-year="2026"
+                data-live="https://music-match-bay.vercel.app/" data-src="https://github.com/ParrvLuthra22/musicMatch">
+              <b>TuneMate</b> — Music-based dating app that matches users via Spotify habits and suggests concert dates.
+              <span class="pmeta">React · Socket.io · Spotify API · 2026</span><a class="pl" href="https://music-match-bay.vercel.app/" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/musicMatch" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="garmentpos" data-still="stills/garmentpos.jpg" data-stack="JavaScript · Node" data-year="2026"
+                data-live="https://garment-pos-theta.vercel.app" data-src="https://github.com/ParrvLuthra22/garment-pos">
+              <b>Garment POS</b> — Barcode billing and inventory for garment shops — a phone camera scans, the desktop bills.
+              <span class="pmeta">JavaScript · Node · 2026</span><a class="pl" href="https://garment-pos-theta.vercel.app" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/garment-pos" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="gst" data-still="stills/gst.jpg" data-stack="JavaScript · in-browser" data-year="2026"
+                data-live="https://gst-generator.vercel.app" data-src="https://github.com/ParrvLuthra22/GST-Generator">
+              <b>GST Invoice Generator</b> — GST-compliant invoicing for Indian freelancers — no backend, no signup, no data collected.
+              <span class="pmeta">JavaScript · in-browser · 2026</span><a class="pl" href="https://gst-generator.vercel.app" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/GST-Generator" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+          </ol>
+        </section>
+
+        <section class="unit" data-stage="b" data-unit="Sci-Fi Unit" data-domain="AI">
+          <h3><b>Stage B · Sci-Fi Unit</b><span>AI</span></h3>
+          <ol>
+            <li data-id="mnemo" data-still="stills/board-mnemo.svg" data-board="1" data-stack="Python · on-device" data-year="2026"
+                data-src="https://github.com/ParrvLuthra22/FridayAdvanced-">
+              <b>Mnemo</b> — Local, private recall for macOS — quietly indexes what you read and write, answers questions about your own past.
+              <span class="pmeta">Python · on-device · 2026</span><a class="pl" href="https://github.com/ParrvLuthra22/FridayAdvanced-" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="friday" data-still="stills/board-friday.svg" data-board="1" data-stack="Python · Whisper · Vosk" data-year="2026"
+                data-live="https://drive.google.com/file/d/1564qxUsfhVg8FqBlUWC6ZuDhcQ7rRf7A/view" data-live-label="Dailies"
+                data-src="https://github.com/ParrvLuthra22/aiassistantadvanced">
+              <b>FRIDAY</b> — Event-driven macOS voice assistant — wake word, screen OCR, automation tooling, HUD.
+              <span class="pmeta">Python · Whisper · Vosk · 2026</span><a class="pl" href="https://drive.google.com/file/d/1564qxUsfhVg8FqBlUWC6ZuDhcQ7rRf7A/view" target="_blank" rel="noopener" data-cursor="link">Dailies →</a><a class="pl" href="https://github.com/ParrvLuthra22/aiassistantadvanced" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="mmas" data-still="stills/mmas.jpg" data-stack="Python · LangChain · Streamlit" data-year="2026"
+                data-live="https://multimodelagentsystem.streamlit.app/" data-src="https://github.com/ParrvLuthra22/MMAS">
+              <b>MMAS</b> — Multi-agent research system — search, extraction, synthesis and critical review, orchestrated by LLMs.
+              <span class="pmeta">Python · LangChain · Streamlit · 2026</span><a class="pl" href="https://multimodelagentsystem.streamlit.app/" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/MMAS" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="ghreviewer" data-still="stills/board-ghreviewer.svg" data-board="1" data-stack="Python" data-year="2026"
+                data-src="https://github.com/ParrvLuthra22/github-reviewer">
+              <b>GitHub Reviewer</b> — Autonomous code-review agent for GitHub pull requests.
+              <span class="pmeta">Python · 2026</span><a class="pl" href="https://github.com/ParrvLuthra22/github-reviewer" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+          </ol>
+        </section>
+
+        <section class="unit" data-stage="c" data-unit="Documentary Unit" data-domain="Data viz">
+          <h3><b>Stage C · Documentary Unit</b><span>Data viz</span></h3>
+          <ol>
+            <li data-id="uber" data-still="stills/uber.jpg" data-stack="Tableau" data-year="2026"
+                data-live="https://public.tableau.com/app/profile/parrv.luthra/viz/UberDataAnalysis_17773725458420/Dashboard1">
+              <b>Uber Data Analysis</b> — Tableau deep-dive into ride patterns — demand, geography and time, on one dashboard.
+              <span class="pmeta">Tableau · 2026</span><a class="pl" href="https://public.tableau.com/app/profile/parrv.luthra/viz/UberDataAnalysis_17773725458420/Dashboard1" target="_blank" rel="noopener" data-cursor="link">Live →</a></li>
+            <li data-id="netflix" data-still="stills/netflix.jpg" data-stack="Tableau" data-year="2026"
+                data-live="https://public.tableau.com/views/NetflixAnalysis_17773211837080/Netflix">
+              <b>Netflix Analysis</b> — Interactive dashboard mapping the Netflix catalogue by genre, country and year.
+              <span class="pmeta">Tableau · 2026</span><a class="pl" href="https://public.tableau.com/views/NetflixAnalysis_17773211837080/Netflix" target="_blank" rel="noopener" data-cursor="link">Live →</a></li>
+            <li data-id="vizun" data-still="stills/vizun.jpg" data-stack="TypeScript" data-year="2026"
+                data-live="https://vizun.vercel.app" data-src="https://github.com/ParrvLuthra22/vizun">
+              <b>vizun</b> — Interactive data-visualization playground on the web.
+              <span class="pmeta">TypeScript · 2026</span><a class="pl" href="https://vizun.vercel.app" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/vizun" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+          </ol>
+        </section>
+
+        <section class="unit" data-stage="d" data-unit="Short Films" data-domain="Mobile">
+          <h3><b>Stage D · Short Films</b><span>Mobile</span></h3>
+          <ol>
+            <li data-id="upsoshmobile" data-still="stills/board-upsoshmobile.svg" data-board="1" data-flag="NOW SHOOTING"
+                data-stack="React Native · Expo" data-year="2026" data-src="https://github.com/ParrvLuthra22/upsosh-mobile-app">
+              <b>upSosh Mobile</b> — The upSosh picture reshot for the small screen — native event booking on the go.
+              <span class="pmeta">React Native · Expo · 2026</span><a class="pl" href="https://github.com/ParrvLuthra22/upsosh-mobile-app" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+          </ol>
+        </section>
+
+        <section class="unit" data-stage="e" data-unit="The Lab" data-domain="Machine learning">
+          <h3><b>Stage E · The Lab</b><span>Machine learning</span></h3>
+          <ol>
+            <li data-id="churn" data-still="stills/churn.jpg" data-stack="Python · scikit-learn · LangGraph" data-year="2026"
+                data-live="https://playerchurndataprediction-jtwb7gzafrrqvx6bm8g2cv.streamlit.app/" data-src="https://github.com/ParrvLuthra22/playerchurndataPrediction">
+              <b>Player Churn Prediction</b> — Churn model with a RAG retention advisor — inference plus LangGraph-written recommendations.
+              <span class="pmeta">Python · scikit-learn · LangGraph · 2026</span><a class="pl" href="https://playerchurndataprediction-jtwb7gzafrrqvx6bm8g2cv.streamlit.app/" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/playerchurndataPrediction" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="nailart" data-still="stills/board-nailart.svg" data-board="1" data-stack="Python · OpenCV" data-year="2026"
+                data-src="https://github.com/ParrvLuthra22/opencv-nail-art">
+              <b>OpenCV Nail Art</b> — Computer-vision nail-art designer — pipelines that paint designs onto detected nails.
+              <span class="pmeta">Python · OpenCV · 2026</span><a class="pl" href="https://github.com/ParrvLuthra22/opencv-nail-art" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+          </ol>
+        </section>
+
+        <section class="unit" data-stage="f" data-unit="The Vault" data-domain="Others">
+          <h3><b>Stage F · The Vault</b><span>Others</span></h3>
+          <ol>
+            <li data-id="foodkhoj" data-still="stills/foodkhoj.jpg" data-stack="React · Tailwind · Leaflet" data-year="2025"
+                data-live="https://food-khoj.vercel.app/" data-src="https://github.com/ParrvLuthra22/FoodKhoj">
+              <b>FoodKhoj</b> — Responsive frontend for food delivery and real-time map-based order tracking.
+              <span class="pmeta">React · Tailwind · Leaflet · 2025</span><a class="pl" href="https://food-khoj.vercel.app/" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/FoodKhoj" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="coolcliq" data-still="stills/coolcliq.jpg" data-stack="JavaScript" data-year="2026"
+                data-live="https://coolcliq.netlify.app/" data-src="https://github.com/ParrvLuthra22/coolcliq">
+              <b>CoolCliq</b> — Scan the QR, see who's at the venue, chat anonymously, reveal when ready.
+              <span class="pmeta">JavaScript · 2026</span><a class="pl" href="https://coolcliq.netlify.app/" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/coolcliq" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="gtavi" data-still="stills/board-gtavi.svg" data-board="1" data-stack="React · GSAP" data-year="2025"
+                data-live="https://gtavi-eight.vercel.app" data-src="https://github.com/ParrvLuthra22/GTAVI">
+              <b>GTA VI Tribute</b> — A scroll-animation study dressed as the GTA VI landing page.
+              <span class="pmeta">React · GSAP · 2025</span><a class="pl" href="https://gtavi-eight.vercel.app" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/GTAVI" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+            <li data-id="cracked" data-still="stills/cracked.jpg" data-stack="Next.js · Three.js" data-year="2026"
+                data-live="https://cracked-social.vercel.app" data-src="https://github.com/ParrvLuthra22/Cracked.Social">
+              <b>Cracked.Social</b> — Three.js 3D homepage experiment for a social platform.
+              <span class="pmeta">Next.js · Three.js · 2026</span><a class="pl" href="https://cracked-social.vercel.app" target="_blank" rel="noopener" data-cursor="link">Live →</a><a class="pl" href="https://github.com/ParrvLuthra22/Cracked.Social" target="_blank" rel="noopener" data-cursor="link">Source →</a></li>
+          </ol>
+        </section>
       </div>
     </div></div>
   </section>
 
-  <section id="work2" data-ratio="1.85" data-slate="SC 04 · “CREATORLYFF”">
-    <div class="safe"><div class="frame">
-      <figure class="still rack fp" data-cursor="frame">
-        <div class="cell">
-          <img src="stills/creatorlyff.jpg" alt="CreatorLyff — creator marketplace landing page: Where brands meet their next favorite creator" loading="lazy">
-        </div>
-        <figcaption>CreatorLyff — production still<span class="hover-hint"> · hover to pull focus</span></figcaption>
-      </figure>
-      <div class="scene-info fp">
-        <h2 class="scene-kicker">CreatorLyff — the medium</h2>
-        <p class="logline">Full-stack creator marketplace — brands discover and collaborate with creators.</p>
-        <div class="meta-row"><span><b>Stack</b>TypeScript · Node · MongoDB</span><span><b>Year</b>2026</span></div>
-        <div class="scene-links">
-          <a class="scene-link" href="https://creatormarketplace.vercel.app/" target="_blank" rel="noopener" data-cursor="link" aria-label="Enter scene — CreatorLyff live">Enter scene →</a>
-          <a class="scene-link" href="https://github.com/ParrvLuthra22/creatormarketplace" target="_blank" rel="noopener" data-cursor="link" aria-label="CreatorLyff source on GitHub">Source →</a>
-        </div>
-      </div>
-    </div></div>
-  </section>
-
-  <section id="work3" data-ratio="1.85" data-slate="SC 05 · “TUNEMATE”">
-    <div class="safe"><div class="frame">
-      <div class="backdrop" aria-hidden="true"><img src="stills/tunemate.jpg" alt="" loading="lazy"></div>
-      <div class="fg">
-        <h2 class="bigtitle fp">Tune<br>Mate</h2>
-        <div class="scene-info fp">
-          <p class="logline">Music-based dating app that matches users via Spotify habits and suggests concert dates. Pull focus to see it.</p>
-          <div class="meta-row"><span><b>Stack</b>React · Socket.io · Spotify API</span><span><b>Year</b>2026</span></div>
-          <div class="scene-links">
-            <a class="scene-link" href="https://music-match-bay.vercel.app/" target="_blank" rel="noopener" data-cursor="link" aria-label="Enter scene — TuneMate live">Enter scene →</a>
-            <a class="scene-link" href="https://github.com/ParrvLuthra22/musicMatch" target="_blank" rel="noopener" data-cursor="link" aria-label="TuneMate source on GitHub">Source →</a>
-          </div>
-        </div>
-      </div>
-      <div class="ff" id="ff" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
-           aria-label="Follow focus — rack focus between the title and the chart behind it" data-cursor="scrub">
-        <span class="ff-title"><span>Follow focus — drag</span><b class="ff-read">1.2 M</b></span>
-        <span class="ff-scale" aria-hidden="true"><span>0.6</span><span>1</span><span>2</span><span>5</span><span>∞</span></span>
-        <span class="ff-track"><i class="ff-thumb"></i></span>
-      </div>
-    </div></div>
-  </section>
-
-  <section id="work4" data-ratio="1.85" data-slate="SC 06 · “FOODKHOJ”">
-    <div class="safe"><div class="frame">
-      <figure class="still fp" data-cursor="frame">
-        <div class="cell">
-          <img src="stills/foodkhoj.jpg" alt="FoodKhoj — food delivery frontend: order food and track delivery in real time" loading="lazy">
-        </div>
-        <figcaption>FoodKhoj — production still · insert shot</figcaption>
-      </figure>
-      <div class="scene-info fp">
-        <h2 class="scene-kicker">FoodKhoj — the insert</h2>
-        <p class="logline">Responsive frontend for food delivery and real-time map-based order tracking.</p>
-        <div class="meta-row"><span><b>Stack</b>React · Tailwind · Leaflet</span><span><b>Year</b>2026</span></div>
-        <div class="scene-links">
-          <a class="scene-link" href="https://food-khoj.vercel.app/" target="_blank" rel="noopener" data-cursor="link" aria-label="Enter scene — FoodKhoj live">Enter scene →</a>
-          <a class="scene-link" href="https://github.com/ParrvLuthra22/FoodKhoj" target="_blank" rel="noopener" data-cursor="link" aria-label="FoodKhoj source on GitHub">Source →</a>
-        </div>
-      </div>
-    </div></div>
-  </section>
-
-  <section id="script" data-ratio="1.375" data-slate="SC 07 · CHARACTER STUDY">
+  <section id="script" data-ratio="1.375" data-slate="SC 04 · CHARACTER STUDY">
     <div class="safe"><div class="frame">
       <div class="page fp">
         <div class="page-head"><span>Parrv — “Portfolio” — shooting draft</span><span>p. 3</span></div>
@@ -449,7 +438,7 @@ html.instant *,html.instant *::before,html.instant *::after{transition:none !imp
     </div></div>
   </section>
 
-  <section id="credits" data-ratio="2.39" data-slate="SC 08 · CREDITS">
+  <section id="credits" data-ratio="2.39" data-slate="SC 05 · CREDITS">
     <div class="safe"><div class="frame">
       <h2 class="vh">Credits and contact</h2>
       <div class="credit-roll">
@@ -458,7 +447,7 @@ html.instant *,html.instant *::before,html.instant *::after{transition:none !imp
         <div class="credit fp" style="--d:120ms"><span class="role">Design &amp; code</span><span class="name">Parrv</span></div>
         <div class="credit fp" style="--d:180ms"><span class="role">Email</span><a class="name" href="mailto:parrvcodes@gmail.com" data-cursor="link">parrvcodes@gmail.com</a></div>
         <div class="credit fp" style="--d:240ms"><span class="role">GitHub</span><a class="name" href="https://github.com/ParrvLuthra22" target="_blank" rel="noopener" data-cursor="link">ParrvLuthra22</a></div>
-        <div class="credit fp" style="--d:300ms"><span class="role">X</span><a class="name" href="https://x.com/LuthraParrv" target="_blank" rel="noopener" data-cursor="link">@LuthraParrv</a></div>
+        <div class="credit fp" style="--d:300ms"><span class="role">X</span><a class="name" href="https://x.com/ParrvLuthra" target="_blank" rel="noopener" data-cursor="link">@ParrvLuthra</a></div>
         <div class="credit fp" style="--d:360ms"><span class="role">LinkedIn</span><a class="name" href="https://www.linkedin.com/in/parrv-luthra-73372b322/" target="_blank" rel="noopener" data-cursor="link">Parrv Luthra</a></div>
         <div class="credit fp" style="--d:420ms"><span class="role">Location</span><span class="name">New Delhi, India</span></div>
       </div>
@@ -472,11 +461,20 @@ html.instant *,html.instant *::before,html.instant *::after{transition:none !imp
     </div></div>
   </section>
 
+  <section id="outtakes" data-ratio="1.375" data-slate="POST-CREDITS · OUTTAKES">
+    <div class="safe"><div class="frame">
+      <h2 class="vh">Outtakes</h2>
+      <div id="outtakes-body">
+        <p class="ot-locked">OUTTAKES — SEALED CAN<br><span>collect all six stage reels to open it</span></p>
+      </div>
+    </div></div>
+  </section>
+
 </main>
 </div>
 
-<div id="matte-top" class="matte"><span class="hud" id="slate">SC 01 · INT. BLACK · NIGHT</span><span class="hud" id="prod">Prod. PARRV · Answer Print · MMXXVI</span><button type="button" id="report-btn" aria-expanded="false" aria-controls="report" data-cursor="link">Report</button></div>
-<div id="matte-bottom" class="matte"><span class="hud" id="tc">00:00:00:00</span><div id="timeline" data-cursor="scrub" aria-label="Reel timeline — drag to scrub"><div class="track"></div><i id="playhead" aria-hidden="true"></i></div><span class="hud" id="ratio-hud">2.39:1</span><span class="hud" id="rec"><i></i>REC</span></div>
+<div id="matte-top" class="matte"><span class="hud" id="slate">SC 01 · INT. BLACK · NIGHT</span><span class="hud" id="rank-hud" hidden aria-live="off"><b id="rank-name">PA</b><span id="rank-xp">0 XP</span></span><span class="hud" id="prod">Prod. PARRV · Answer Print · MMXXVI</span><button type="button" id="sheet-btn" hidden aria-expanded="false" aria-controls="sheet" data-cursor="link">Call sheet</button><button type="button" id="report-btn" aria-expanded="false" aria-controls="report" data-cursor="link">Report</button><span id="toast" class="hud" role="status" aria-live="polite"></span></div>
+<div id="matte-bottom" class="matte"><span class="hud" id="tc">00:00:00:00</span><button type="button" id="mos-btn" hidden aria-pressed="false" data-cursor="link" aria-label="Sound — currently muted (MOS)">MOS</button><a class="hud" id="pcut-btn" href="#producers-cut" hidden data-cursor="link">Producer’s cut</a><div id="timeline" data-cursor="scrub" aria-label="Reel timeline — drag to scrub"><div class="track"></div><i id="playhead" aria-hidden="true"></i></div><span class="hud" id="ratio-hud">2.39:1</span><span class="hud" id="rec"><i></i>REC</span></div>
 <div id="matte-left" class="matte"></div>
 <div id="matte-right" class="matte"></div>
 
@@ -550,7 +548,7 @@ if(!instant){
 }
 
 /* ---------- matte engine ---------- */
-const sections=$$('section');
+const sections=$$('main>section');
 const RATIO_LABEL={ '2.39':'2.39:1','1.85':'1.85:1','1.375':'1.375:1 · ACADEMY','4':'REEL END' };
 function gate(){ return innerWidth<700 || innerWidth<innerHeight; }
 function bars(r){
@@ -569,6 +567,7 @@ function apply(sec){
 }
 function cut(sec){
   if(sec===current) return; current=sec;
+  if(document.body.classList.contains('set-open')) return; /* a set is dressed over the reel — its slate holds */
   if(instant||reduced||scrubbing){ apply(sec); onScene(sec); return; }
   clearTimeout(cutTimer);
   document.body.classList.add('cutting');
@@ -665,61 +664,10 @@ tl.addEventListener('pointermove',e=>{ if(scrubbing) scrub(e); });
 tl.addEventListener('pointerup',endScrub);
 tl.addEventListener('pointercancel',endScrub);
 
-/* ---------- follow focus: SC 05 is an operable camera ----------
-   two planes, each a sharp layer + a statically-blurred clone; the drag
-   crossfades opacity between them. filter values never change. */
-(function followFocus(){
-  const ff=$('#ff'); if(!ff) return;
-  const thumb=ff.querySelector('.ff-thumb'), read=ff.querySelector('.ff-read');
-  const bd=$('#work3 .backdrop'), fg=$('#work3 .fg');
-  let built=false, bdSharp=null, ghost=null;
-  function build(){
-    if(built) return; built=true;
-    bdSharp=bd.cloneNode(true);
-    const sv=bdSharp.querySelector('svg,img'); if(sv) sv.removeAttribute('id');
-    bdSharp.style.filter='none'; bdSharp.style.opacity='0';
-    bd.after(bdSharp);
-    ghost=fg.cloneNode(true); ghost.classList.add('ff-ghost'); ghost.setAttribute('aria-hidden','true');
-    ghost.querySelectorAll('a,[tabindex]').forEach(el=>el.setAttribute('tabindex','-1'));
-    fg.after(ghost);
-  }
-  function set(v){
-    const t=Math.min(1,Math.max(0,v)); build();
-    fg.style.opacity=(1-t*.88).toFixed(3);      /* near plane leaves focus */
-    ghost.style.opacity=(t*.92).toFixed(3);
-    bdSharp.style.opacity=(t*.9).toFixed(3);    /* far plane arrives */
-    bd.style.opacity=(.4-t*.3).toFixed(3);
-    thumb.style.left=(t*100).toFixed(2)+'%';
-    read.textContent=t>.985?'\u221E':(1.2*Math.pow(5,t)).toFixed(1)+' M';
-    ff.setAttribute('aria-valuenow',String(Math.round(t*100)));
-    ff.dataset.t=t;
-  }
-  let dragging=false;
-  function fromEvent(e){
-    const r=ff.querySelector('.ff-track').getBoundingClientRect();
-    set((e.clientX-r.left)/r.width);
-  }
-  ff.addEventListener('pointerdown',e=>{
-    dragging=true; fromEvent(e);
-    try{ ff.setPointerCapture(e.pointerId); }catch(_){}
-  });
-  ff.addEventListener('pointermove',e=>{ if(dragging) fromEvent(e); });
-  ff.addEventListener('pointerup',()=>dragging=false);
-  ff.addEventListener('pointercancel',()=>dragging=false);
-  ff.addEventListener('keydown',e=>{
-    const t=+(ff.dataset.t||0);
-    if(e.key==='ArrowRight'||e.key==='ArrowUp'){ set(t+.08); e.preventDefault(); }
-    else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){ set(t-.08); e.preventDefault(); }
-    else if(e.key==='Home'){ set(0); e.preventDefault(); }
-    else if(e.key==='End'){ set(1); e.preventDefault(); }
-  });
-  if(shot&&params.get('ff')) set(1);
-})();
-
 /* ---------- boot: gate opens on the leader ---------- */
-if(shot){
+if(shot&&sections.some(s=>s.id===shot)){
   /* headless screenshots always capture the document origin — isolate the target section there */
-  const t=document.getElementById(shot)||sections[0];
+  const t=sections.find(s=>s.id===shot);
   sections.forEach(s=>{ if(s!==t) s.style.display='none'; });
   current=t; apply(t);
   if(params.get('focus')) document.body.classList.add('force-focus');
@@ -737,7 +685,7 @@ if(shot){
       ' nw='+r.width.toFixed(0)+' nl='+r.left.toFixed(0)+' fh='+t.style.getPropertyValue('--fh')+
       ' pad='+t.querySelector('.safe').style.padding+' sw='+document.documentElement.scrollWidth;
   },700);
-}else{
+}else if(!shot){ /* overlay shots (stage/dept) keep their own slate — no boot cut */
   setTimeout(()=>{ if(!current) cut(sections[0]); if(!reduced) document.body.classList.add('flicker'); },380);
 }
 
@@ -868,7 +816,19 @@ typeOn($('#slate-line'),900,()=>typeOn($('#roll-hint'),500));
   if(saved&&saved.stop&&saved.ei) apply(saved);
   if(shot&&params.get('report')) toggle(true);
 })();
+
+/* ---------- bridge: the lot, the departments and the game read the projector through here ---------- */
+window.FILM={
+  jumpTo, cut, sections, gate, layout, reduced, instant, params, shot,
+  setSlate:(t,r)=>{ $('#slate').textContent=t; if(r) $('#ratio-hud').textContent=r; },
+  restoreSlate:()=>{ if(current){ $('#slate').textContent=current.dataset.slate;
+    $('#ratio-hud').textContent=RATIO_LABEL[current.dataset.ratio]||current.dataset.ratio+':1'; } },
+  grain:o=>{ if(setGrain) setGrain(o); }
+};
 })();
 </script>
+<script src="js/game.js"></script>
+<script src="js/lot.js"></script>
+<script src="js/departments.js"></script>
 </body>
 </html>
