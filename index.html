@@ -685,8 +685,11 @@ if(shot&&sections.some(s=>s.id===shot)){
       ' nw='+r.width.toFixed(0)+' nl='+r.left.toFixed(0)+' fh='+t.style.getPropertyValue('--fh')+
       ' pad='+t.querySelector('.safe').style.padding+' sw='+document.documentElement.scrollWidth;
   },700);
-}else if(!shot){ /* overlay shots (stage/dept) keep their own slate — no boot cut */
+}else if(!shot){
   setTimeout(()=>{ if(!current) cut(sections[0]); if(!reduced) document.body.classList.add('flicker'); },380);
+}else{ /* overlay shot (stage/dept/pcut): open the gate to the hub's geometry; the set dresses its own slate */
+  const t=sections.find(s=>s.id==='backlot')||sections[0];
+  current=t; apply(t);
 }
 
 /* ---------- timecode: scroll is the playhead, 24s @ 24fps ---------- */
