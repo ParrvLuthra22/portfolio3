@@ -1,55 +1,46 @@
-# PARRV PICTURES — The Backlot
+# PARRV PICTURES — The Backlot (v3)
 
-A portfolio shot on a studio backlot. No framework, no build step — one HTML file,
-one stylesheet, three scripts.
+A portfolio shot on a studio backlot: six sound stages, four departments, one reel.
+v3 rebuilds the film as a **Next.js 15** production — App Router, GSAP ScrollTrigger,
+Lenis smooth scroll — while keeping the design law of the answer print: silver mids
+on halide, mono chrome, 1px lines, a red budget of exactly five, `filter` values
+never animate.
 
-The film opens cold (2.39:1, scroll is the playhead), rolls a title, and arrives at
-**the backlot**: a studio plan with six sound stages, one per domain —
+## Run it
 
-- **Stage A · Features** — fullstack
-- **Stage B · Sci-Fi Unit** — AI
-- **Stage C · Documentary Unit** — data viz
-- **Stage D · Short Films** — mobile
-- **Stage E · The Lab** — machine learning
-- **Stage F · The Vault** — everything else
+```bash
+npm install
+npm run dev      # develop on :3000
+npm run build    # production build (35 static pages)
+npm start        # serve the answer print
+```
 
-Walk a stage and its scenes roll: production stills captured from the live deploys,
-storyboard panels for the pictures without one. Hold a scene in frame and it counts
-as **shot**; shoot everything on a stage and you strike its **reel**.
+## The reel
+
+| Route | Scene |
+| --- | --- |
+| `/` | The film: leader countdown → title card (pinned letter-rise) → NOW SCREENING dolly → the backlot plan → character study → credits → FIN → outtakes |
+| `/stage/a`…`/stage/f` | A sound stage: hold a scene in frame to shoot it; shoot them all to strike the reel |
+| `/film/[id]` | One picture, full-bleed, with a COMING ATTRACTIONS pre-roll |
+| `/dept/ad·camera·edit·runner` | The four department games — unlocked at 1/2/4/6 reels |
+| `/filmography` | The producer's cut: every picture on one sheet, no tour |
 
 ## The game
 
-Reels power the four **departments** — each a playable room, unlocked at 1/2/4/6 reels:
+Everything the visitor earns lives in one can: `localStorage["parrv-lot"]`
+(unchanged from v2 — returning crew keep their record). XP promotes you up the
+crew ladder (PA → 2ND AC → 1ST AC → OPERATOR → DP → DIRECTOR), stage reels power
+the departments, medals and achievements print on the wrap report, and all six
+reels unseal the outtakes after the credits.
 
-1. **AD Dept — the slate**: hit the sticks on the exact frame; streaks pay double
-2. **Camera Dept — the focus pull**: keep a drifting subject inside the depth of field for 30s
-3. **Editorial — the cut**: rebuild a shuffled scene against the clock
-4. **Transport — the reel run**: roll the can past sandbags and C-stands; mind the boom
+## Structure
 
-XP promotes you up the crew ladder (PA → 2ND AC → 1ST AC → OPERATOR → DP → DIRECTOR),
-the **call sheet** tracks reels, medals and achievements, and a **wrap report** prints
-your run as a shareable poster. All six reels unseal the **outtakes** after the credits.
-Everything lives in `localStorage` — your projector, your print.
+- `data/projects.ts` — the sheet: single source of truth for all 19 pictures
+- `lib/film.tsx` — the projector: mattes, cuts, Lenis, the print settings
+- `lib/game.tsx` / `lib/sound.ts` — the crew record and the WebAudio synth
+- `components/scenes/` — the reel, scene by scene
+- `components/dept/` — the four working rooms
+- `legacy/` — the v2 static site (no framework, no build), kept for reference
 
-In a hurry? **Producer's cut** (bottom bar, or the main gate on the plan) is the whole
-filmography as one plain sheet — live links, source links, no tour.
-
-House rules unchanged from the film: `filter` values never animate, grain is a canvas
-tile overlay, and the safelight red is budgeted — exactly five uses on the whole lot.
-Sound is synthesized WebAudio, MOS (muted) until you flip it.
-
-## Run
-
-```
-python3 -m http.server 8126
-# → http://localhost:8126
-```
-
-No dependencies. Fonts are local (League Gothic, Newsreader, Courier Prime — latin subsets).
-
-Deterministic screenshots for review: `?shot=<sectionid>` isolates a scene
-(`leader`, `title`, `backlot`, `script`, `credits`, `fin`, `outtakes`), and
-`?shot=stage-a`…`stage-f`, `?shot=dept-ad|camera|edit|runner`, `?shot=pcut`
-open the overlay sets. `&report=1` opens the camera report.
-
-Respects `prefers-reduced-motion`; degrades to a plain readable filmography without JavaScript.
+Sound is synthesized, MOS until asked — the leader gate is the gesture.
+Respects `prefers-reduced-motion`; degrades to readable content without JavaScript.

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 853">
+<rect width="1280" height="853" fill="#0E0F0D"/>
+<rect x="40" y="40" width="1200" height="700" fill="none" stroke="#8E958D" stroke-width="2" opacity=".8"/>
+<rect x="52" y="52" width="1176" height="676" fill="none" stroke="#8E958D" stroke-width="1" opacity=".25"/>
+
+<path d="M 420 700 C 400 560 410 470 430 400 C 440 360 470 355 480 395 L 500 480
+         C 505 430 500 340 515 300 C 525 265 558 265 565 305 L 580 470
+         C 585 420 585 320 597 275 C 607 240 640 242 646 282 L 655 470
+         C 662 430 665 350 676 315 C 686 282 716 286 720 322 L 722 500
+         C 740 470 755 430 775 415 C 800 397 818 420 805 450 C 780 505 760 570 750 640 C 745 675 730 700 700 700 Z"
+      fill="none" stroke="#8E958D" stroke-width="2.5"/>
+<rect x='418' y='342' width='68' height='80' fill='none' stroke='#E5E3DA' stroke-width='1.5' stroke-dasharray='6 5'/><text x='452' y='330' fill='#E5E3DA' font-family='Courier New,monospace' font-size='14' letter-spacing='2' text-anchor='middle'>N1 ·  98%</text><rect x='503' y='248' width='68' height='80' fill='none' stroke='#E5E3DA' stroke-width='1.5' stroke-dasharray='6 5'/><text x='537' y='236' fill='#E5E3DA' font-family='Courier New,monospace' font-size='14' letter-spacing='2' text-anchor='middle'>N2 ·  97%</text><rect x='585' y='222' width='68' height='80' fill='none' stroke='#E5E3DA' stroke-width='1.5' stroke-dasharray='6 5'/><text x='619' y='210' fill='#E5E3DA' font-family='Courier New,monospace' font-size='14' letter-spacing='2' text-anchor='middle'>N3 ·  99%</text><rect x='662' y='266' width='68' height='80' fill='none' stroke='#E5E3DA' stroke-width='1.5' stroke-dasharray='6 5'/><text x='696' y='254' fill='#E5E3DA' font-family='Courier New,monospace' font-size='14' letter-spacing='2' text-anchor='middle'>N4 ·  96%</text><rect x='757' y='392' width='68' height='80' fill='none' stroke='#E5E3DA' stroke-width='1.5' stroke-dasharray='6 5'/><text x='791' y='380' fill='#E5E3DA' font-family='Courier New,monospace' font-size='14' letter-spacing='2' text-anchor='middle'>N5 ·  91%</text>
+<text x='950' y='400' fill='#8E958D' font-family='Courier New,monospace' font-size='20' letter-spacing='4' text-anchor='start'>CONTOURS FOUND: 5</text>
+<text x='950' y='436' fill='#8E958D' font-family='Courier New,monospace' font-size='20' letter-spacing='4' text-anchor='start'>DESIGN: ART DECO 04</text>
+<text x='950' y='472' fill='#E5E3DA' font-family='Courier New,monospace' font-size='20' letter-spacing='4' text-anchor='start'>CV2 — PIPELINE OK</text>
+<text x='120' y='180' fill='#8E958D' font-family='Courier New,monospace' font-size='20' letter-spacing='4' text-anchor='start'>DETECT THE NAILS. PAINT THE DESIGN. NO STEADY HANDS REQUIRED.</text>
+
+<line x1="40" y1="780" x2="1240" y2="780" stroke="#8E958D" stroke-width="1" opacity=".5"/>
+<text x="40" y="812" fill="#E5E3DA" font-family='Courier New,monospace' font-size="22" letter-spacing="6">OPENCV NAIL ART</text>
+<text x="1240" y="812" fill="#8E958D" font-family='Courier New,monospace' font-size="18" letter-spacing="5" text-anchor="end">PANEL 05 · ART DEPT · PARRV PICTURES</text>
+</svg>
