@@ -70,11 +70,13 @@ export default function Screening() {
                   {String(i + 1).padStart(2, "0")} / {String(FEATURED.length).padStart(2, "0")}
                   {stg ? " · STAGE " + stg.key.toUpperCase() : ""}
                 </span>
-                <div className="cell">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.still} alt={p.name + " — " + p.logline} loading={i === 0 ? "eager" : "lazy"} />
+                <div className="pl-media">
+                  <div className="cell">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.still} alt={p.name + " — " + p.logline} loading={i === 0 ? "eager" : "lazy"} />
+                  </div>
+                  <span className="pl-title">{p.name}</span>
                 </div>
-                <span className="pl-title">{p.name}</span>
                 <div className="pl-meta"><b>{p.stack}</b><span>{p.year}</span></div>
               </CutLink>
             );
