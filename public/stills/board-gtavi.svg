@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 853">
+<rect width="1280" height="853" fill="#0E0F0D"/>
+<rect x="40" y="40" width="1200" height="700" fill="none" stroke="#8E958D" stroke-width="2" opacity=".8"/>
+<rect x="52" y="52" width="1176" height="676" fill="none" stroke="#8E958D" stroke-width="1" opacity=".25"/>
+
+<text x="640" y="400" fill="none" stroke="#E5E3DA" stroke-width="2.5" font-family="Georgia,serif" font-size="300" text-anchor="middle" font-style="italic">VI</text>
+<line x1="240" y1="470" x2="1040" y2="470" stroke="#8E958D" stroke-width="1" opacity=".5"/>
+<path d="M 320 470 L 345 430 L 370 470 Z" fill="none" stroke="#8E958D" stroke-width="1.5"/>
+<path d="M 910 470 L 935 430 L 960 470 Z" fill="none" stroke="#8E958D" stroke-width="1.5"/>
+<circle cx="345" cy="415" r="6" fill="none" stroke="#8E958D" stroke-width="1.5"/>
+<circle cx="935" cy="415" r="6" fill="none" stroke="#8E958D" stroke-width="1.5"/>
+<text x='640' y='530' fill='#8E958D' font-family='Courier New,monospace' font-size='18' letter-spacing='4' text-anchor='middle'>SCROLL, AND THE CITY LEANS IN</text>
+<text x='120' y='180' fill='#8E958D' font-family='Courier New,monospace' font-size='20' letter-spacing='4' text-anchor='start'>A SHOT-FOR-SHOT LANDING PAGE STUDY —</text>
+<text x='120' y='216' fill='#8E958D' font-family='Courier New,monospace' font-size='20' letter-spacing='4' text-anchor='start'>MASK REVEALS, PINNED SCENES, INERTIA SCROLL.</text>
+<text x='1160' y='640' fill='#E5E3DA' font-family='Courier New,monospace' font-size='18' letter-spacing='4' text-anchor='end'>GSAP · REACT</text>
+<path d="M 620 585 L 640 615 L 660 585" fill="none" stroke="#E5E3DA" stroke-width="2"/>
+<path d="M 620 620 L 640 650 L 660 620" fill="none" stroke="#8E958D" stroke-width="2" opacity=".55"/>
+
+<line x1="40" y1="780" x2="1240" y2="780" stroke="#8E958D" stroke-width="1" opacity=".5"/>
+<text x='40' y='812' fill='#E5E3DA' font-family='Courier New,monospace' font-size='22' letter-spacing='4' text-anchor='start'>GTA VI TRIBUTE</text>
+<text x='1240' y='812' fill='#8E958D' font-family='Courier New,monospace' font-size='18' letter-spacing='4' text-anchor='end'>PANEL 06 · ART DEPT · PARRV PICTURES</text>
+</svg>
