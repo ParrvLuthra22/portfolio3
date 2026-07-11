@@ -162,6 +162,32 @@ export function FilmProvider({ children }: { children: React.ReactNode }) {
     return () => cancelAnimationFrame(id);
   }, [pathname]);
 
+  /* proximity snap: the reel never rests mid-frame — when scrolling stops near
+     a scene boundary, settle onto the cut so no text hides under the mattes */
+  useEffect(() => {
+    if (reduced) return;
+    const onEnd = () => {
+      const lenis = lenisRef.current;
+      if (!lenis) return;
+      const b = document.body.classList;
+      if (b.contains("scrubbing") || b.contains("cutting")) return;
+      const entries = timelineRef.current;
+      if (!entries.length) return;
+      const y = window.scrollY;
+      let best: number | null = null;
+      for (const e of entries) {
+        /* pinned scenes park inside a pin-spacer — snap to the spacer's start */
+        const wrap = (e.el.closest(".pin-spacer") as HTMLElement) || e.el;
+        const top = wrap.getBoundingClientRect().top + y;
+        if (Math.abs(top - y) < window.innerHeight * 0.22
+          && (best === null || Math.abs(top - y) < Math.abs(best - y))) best = top;
+      }
+      if (best !== null && Math.abs(best - y) > 2) lenis.scrollTo(best, { duration: 0.85 });
+    };
+    ScrollTrigger.addEventListener("scrollEnd", onEnd);
+    return () => { ScrollTrigger.removeEventListener("scrollEnd", onEnd); };
+  }, [reduced]);
+
   const api: FilmApi = {
     reduced, slate, ratioLabel, print, setPrint,
     grainO: GRAIN[print.ei] ?? 0.11,

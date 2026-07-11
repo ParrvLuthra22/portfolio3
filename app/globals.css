@@ -104,7 +104,8 @@ body.scrubbing .matte{transition:none;}
 #exposure{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:0;transition:opacity .35s ease;}
 
 /* ============ CURSOR ============ */
-#cursor{position:fixed;left:0;top:0;z-index:100;pointer-events:none;opacity:0;}
+/* z above everything — including the leader gate (110); no scene may hide the focus puller */
+#cursor{position:fixed;left:0;top:0;z-index:130;pointer-events:none;opacity:0;}
 #cursor.live{opacity:1;}
 #cursor .c-ring{position:absolute;left:-17px;top:-17px;width:34px;height:34px;border:1px solid rgba(142,149,141,.9);border-radius:50%;transition:transform .25s,opacity .25s;}
 #cursor .c-dot{position:absolute;left:-1.5px;top:-1.5px;width:3px;height:3px;border-radius:50%;background:var(--bone);}
