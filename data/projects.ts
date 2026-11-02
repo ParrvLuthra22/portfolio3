@@ -37,6 +37,8 @@ export const STAGES: Stage[] = [
   {
     key: "b", unit: "Sci-Fi Unit", domain: "AI",
     projects: [
+      { id: "vesper", name: "Vesper", logline: "Proactive macOS AI agent — an LLM planner over ~40 tools, gated by a three-tier permission Guardian, voice and a Tauri HUD.", still: "/stills/board-vesper.svg", board: true, stack: "Python · FastAPI · MCP · Tauri", year: "2026", src: "https://github.com/ParrvLuthra22/vesper" },
+      { id: "vantage", name: "Vantage", logline: "Self-hosted tracing and evaluation for LLM agents — trace trees, cost tracking and regression evals that gate the pull request.", still: "/stills/board-vantage.svg", board: true, stack: "Python · FastAPI · PostgreSQL · Docker", year: "2026", src: "https://github.com/ParrvLuthra22/vantage" },
       { id: "mnemo", name: "Mnemo", logline: "Local, private recall for macOS — quietly indexes what you read and write, answers questions about your own past.", still: "/stills/board-mnemo.svg", board: true, stack: "Python · on-device", year: "2026", src: "https://github.com/ParrvLuthra22/FridayAdvanced-" },
       { id: "friday", name: "FRIDAY", logline: "Event-driven macOS voice assistant — wake word, screen OCR, automation tooling, HUD.", still: "/stills/board-friday.svg", board: true, stack: "Python · Whisper · Vosk", year: "2026", live: "https://drive.google.com/file/d/1564qxUsfhVg8FqBlUWC6ZuDhcQ7rRf7A/view", liveLabel: "Dailies", src: "https://github.com/ParrvLuthra22/aiassistantadvanced" },
       { id: "mmas", name: "MMAS", logline: "Multi-agent research system — search, extraction, synthesis and critical review, orchestrated by LLMs.", still: "/stills/mmas.jpg", stack: "Python · LangChain · Streamlit", year: "2026", live: "https://multimodelagentsystem.streamlit.app/", src: "https://github.com/ParrvLuthra22/MMAS" },
@@ -60,6 +62,7 @@ export const STAGES: Stage[] = [
   {
     key: "e", unit: "The Lab", domain: "Machine learning",
     projects: [
+      { id: "drishti", name: "Drishti", logline: "Real-time situational awareness — YOLOv8 + ByteTrack, a VideoMAE fight classifier and a LangGraph agent scoring crowd risk 0–100.", still: "/stills/board-drishti.svg", board: true, stack: "Python · PyTorch · YOLOv8 · VideoMAE", year: "2026", src: "https://github.com/ParrvLuthra22/Drishti" },
       { id: "churn", name: "Player Churn Prediction", logline: "Churn model with a RAG retention advisor — inference plus LangGraph-written recommendations.", still: "/stills/churn.jpg", stack: "Python · scikit-learn · LangGraph", year: "2026", live: "https://playerchurndataprediction-jtwb7gzafrrqvx6bm8g2cv.streamlit.app/", src: "https://github.com/ParrvLuthra22/playerchurndataPrediction" },
       { id: "nailart", name: "OpenCV Nail Art", logline: "Computer-vision nail-art designer — pipelines that paint designs onto detected nails.", still: "/stills/board-nailart.svg", board: true, stack: "Python · OpenCV", year: "2026", src: "https://github.com/ParrvLuthra22/opencv-nail-art" },
     ],
